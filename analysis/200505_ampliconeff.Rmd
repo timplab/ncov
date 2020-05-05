@@ -1,0 +1,41 @@
+---
+title: "Looking at efficiency of amplicon sequencing"
+output: html_notebook
+---
+```{r, setup, include=FALSE}
+library(tidyverse)
+library(GenomicRanges)
+knitr::opts_knit$set(root.dir="D:/Data/200505_ncov")
+```
+
+Ok - the goal here is to look at the efficiency of amplicon sequencing in the context of ARTIC
+
+My suspicion is that amplicons are far less efficient because of dark time.
+
+First get the bed of the V3 ARTIC from artic-ncov2019 github
+```{bash}
+wget https://raw.githubusercontent.com/artic-network/artic-ncov2019/master/primer_schemes/nCoV-2019/V3/nCoV-2019.bed
+
+````
+
+Now generate GRanges of amplicons
+```{r}
+primer.loc=read_tsv("nCoV-2019.bed", col_names=c("ref", "start", "end", "name", "pool", "strand"))
+
+primer.loc=primer.loc %>%
+  mutate(amplicon.num=str_split_fixed(name, "_", 4)[,2])
+
+amplicon=primer.loc %>%
+  group_by(amplicon.num) %>%
+  summarize(pool=pool[1], amp.start=min(start), amp.end=max(end)) %>%
+  mutate(length=amp.end-amp.start)
+  
+```
+
+Ok - so now let's visualize this data.  First I wanna plot the length of the amplicons
+
+```{r}
+
+ggplot(amplicon, aes(x=length, color=pool))+geom_density()
+
+```
