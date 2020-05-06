@@ -5,6 +5,8 @@ output: html_notebook
 ```{r, setup, include=FALSE}
 library(tidyverse)
 library(GenomicRanges)
+library(cowplot)
+theme_set(theme_cowplot())
 knitr::opts_knit$set(root.dir="D:/Data/200505_ncov")
 ```
 
@@ -29,6 +31,9 @@ amplicon=primer.loc %>%
   group_by(amplicon.num) %>%
   summarize(pool=pool[1], amp.start=min(start), amp.end=max(end)) %>%
   mutate(length=amp.end-amp.start)
+
+amplicon=amplicon %>%
+  mutate(pool.y=ifelse(pool=="nCoV-2019_1", 0,1))
   
 ```
 
@@ -36,6 +41,15 @@ Ok - so now let's visualize this data.  First I wanna plot the length of the amp
 
 ```{r}
 
-ggplot(amplicon, aes(x=length, color=pool))+geom_density()
+ggplot(amplicon, aes(x=length, fill=pool))+geom_histogram()+facet_wrap(~pool)
+
+```
+
+Then I want to plot the location of the amplicons along the genom
+
+```{r}
+
+ggplot(amplicon)+geom_segment(aes(x=amp.start, xend=amp.end, y=pool.y, yend=pool.y, color=pool))+ylim(0,10)
+
 
 ```
