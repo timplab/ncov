@@ -1,0 +1,70 @@
+---
+title: "SRA F5 submission"
+output: html_notebook
+---
+
+```{r, setup, include=FALSE}
+library(tidyverse)
+library(readxl)
+knitr::opts_knit$set(root.dir="/Users/timp/Johns Hopkins/Stuart Ray - JHU-genomics_SARS-CoV-2/metadata_resources/Genbank_SRA/200819_sra")
+```
+
+Ok - we have two files.  One - is the metadata from the last SRA submission, the other is the template file
+
+
+```{r}
+prevsub=read_tsv("metadata-7839817-processed-ok.tsv")
+template=read_excel("SRA_metadata_acc.xlsx", sheet="SRA_data", col_types="text")
+```
+
+Now - let's filter to just nanopore and put it in.
+
+
+```{r}
+
+prevsub=prevsub %>%
+  filter(platform=="OXFORD_NANOPORE")
+
+```
+
+Pull into template:
+
+```{r}
+
+meta=template %>%
+  add_row(biosample_accession=prevsub$biosample_accession) %>%
+  mutate(library_ID=prevsub$library_ID) %>%
+  mutate(title=prevsub$title) %>%
+  mutate(library_strategy=prevsub$library_strategy) %>%
+  mutate(library_source=prevsub$library_source) %>%
+  mutate(library_selection=prevsub$library_selection) %>%
+  mutate(library_layout=prevsub$library_layout) %>%
+  mutate(platform=prevsub$platform) %>%
+  mutate(instrument_model=prevsub$instrument_model) %>%
+  mutate(design_description=prevsub$design_description) %>%
+  mutate(filetype="OxfordNanopore_native") %>% 
+  select(-filename)
+
+```
+
+Ok - next problem - the filename for the tarballs
+
+```{r}
+
+f5.info=tibble(filename=list.files("D:/Data/200730_ncov/np_f5/")) %>%
+  mutate(library_ID=paste0(str_split_fixed(filename, '\\.', 2)[,1], "_Nanopore"))
+
+```
+
+And let's join it.
+
+```{r}
+submit=left_join(meta, f5.info) %>%
+  relocate(filename, .before=filename2) %>%
+  mutate_all(funs(replace_na(., ''))) 
+
+
+write_tsv(submit, "200819_sraf5.tsv")
+
+
+```

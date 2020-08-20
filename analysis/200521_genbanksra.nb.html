@@ -11,7 +11,7 @@
 
 
 
-<title>Looking at efficiency of amplicon sequencing</title>
+<title>Genbank Conversion</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -1743,7 +1743,7 @@ summary {
 
 
 
-<h1 class="title toc-ignore">Looking at efficiency of amplicon sequencing</h1>
+<h1 class="title toc-ignore">Genbank Conversion</h1>
 
 </div>
 
@@ -1751,190 +1751,256 @@ summary {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
-<p>Ok - the goal here is to look at the efficiency of amplicon sequencing in the context of ARTIC</p>
-<p>My suspicion is that amplicons are far less efficient because of dark time.</p>
-<p>First get the bed of the V3 ARTIC from artic-ncov2019 github</p>
+<p>Ok - our goal here is to ingest the metainformation from Sri et al and output a file in Genbank’s lovely format. After I get this working, I’ll move it to an Rscript or something and pass it to Sri and Tom to add to the std pipeline for auto generation.</p>
+<p>First, ingest the template and metainfo</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgYmFzaFxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
-<pre class="bash"><code>library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSCRdGlkeXZlcnNlkiB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDMuNi4zUmVnaXN0ZXJlZCBTMyBtZXRob2Qgb3ZlcndyaXR0ZW4gYnkgJ2RwbHlyJzpcbiAgbWV0aG9kICAgICAgICAgICBmcm9tXG4gIHByaW50LnJvd3dpc2VfZGYgICAgIFxuUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuXHUwMDFiWzMwbS0tIFx1MDAxYlsxbUF0dGFjaGluZyBwYWNrYWdlc1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZSAxLjMuMCAtLVx1MDAxYlszOW1cblx1MDAxYlszMG1cdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bWdncGxvdDJcdTAwMWJbMzBtIDMuMy4wICAgICBcdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bXB1cnJyICBcdTAwMWJbMzBtIDAuMy40XG5cdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bXRpYmJsZSBcdTAwMWJbMzBtIDMuMC4xICAgICBcdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bWRwbHlyICBcdTAwMWJbMzBtIDAuOC41XG5cdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bXRpZHlyICBcdTAwMWJbMzBtIDEuMC4zICAgICBcdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bXN0cmluZ3JcdTAwMWJbMzBtIDEuNC4wXG5cdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bXJlYWRyICBcdTAwMWJbMzBtIDEuMy4xICAgICBcdTAwMWJbMzJtdlx1MDAxYlszMG0gXHUwMDFiWzM0bWZvcmNhdHNcdTAwMWJbMzBtIDAuNS4wXHUwMDFiWzM5bVxucGFja2FnZSCRZ2dwbG90MpIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjYuM3BhY2thZ2UgkXRpYmJsZZIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjYuM3BhY2thZ2UgkXRpZHlykiB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDMuNi4zcGFja2FnZSCRcmVhZHKSIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gMy42LjNwYWNrYWdlIJFwdXJycpIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjYuM3BhY2thZ2UgkWRwbHlykiB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDMuNi4zcGFja2FnZSCRZm9yY2F0c5Igd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiAzLjYuM1x1MDAxYlszMG0tLSBcdTAwMWJbMW1Db25mbGljdHNcdTAwMWJbMjJtIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSB0aWR5dmVyc2VfY29uZmxpY3RzKCkgLS1cblx1MDAxYlszMW14XHUwMDFiWzMwbSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzBtOjpcdTAwMWJbMzJtZmlsdGVyKClcdTAwMWJbMzBtIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszMG06OmZpbHRlcigpXG5cdTAwMWJbMzFteFx1MDAxYlszMG0gXHUwMDFiWzM0bWRwbHlyXHUwMDFiWzMwbTo6XHUwMDFiWzMybWxhZygpXHUwMDFiWzMwbSAgICBtYXNrcyBcdTAwMWJbMzRtc3RhdHNcdTAwMWJbMzBtOjpsYWcoKVx1MDAxYlszOW1cbiJ9 -->
-<pre><code>package 㤼㸱tidyverse㤼㸲 was built under R version 3.6.3Registered S3 method overwritten by &#39;dplyr&#39;:
-  method           from
-  print.rowwise_df     
-Registered S3 methods overwritten by &#39;dbplyr&#39;:
-  method         from
-  print.tbl_lazy     
-  print.tbl_sql      
-[30m-- [1mAttaching packages[22m --------------------------------------- tidyverse 1.3.0 --[39m
-[30m[32mv[30m [34mggplot2[30m 3.3.0     [32mv[30m [34mpurrr  [30m 0.3.4
-[32mv[30m [34mtibble [30m 3.0.1     [32mv[30m [34mdplyr  [30m 0.8.5
-[32mv[30m [34mtidyr  [30m 1.0.3     [32mv[30m [34mstringr[30m 1.4.0
-[32mv[30m [34mreadr  [30m 1.3.1     [32mv[30m [34mforcats[30m 0.5.0[39m
-package 㤼㸱ggplot2㤼㸲 was built under R version 3.6.3package 㤼㸱tibble㤼㸲 was built under R version 3.6.3package 㤼㸱tidyr㤼㸲 was built under R version 3.6.3package 㤼㸱readr㤼㸲 was built under R version 3.6.3package 㤼㸱purrr㤼㸲 was built under R version 3.6.3package 㤼㸱dplyr㤼㸲 was built under R version 3.6.3package 㤼㸱forcats㤼㸲 was built under R version 3.6.3[30m-- [1mConflicts[22m ------------------------------------------ tidyverse_conflicts() --
-[31mx[30m [34mdplyr[30m::[32mfilter()[30m masks [34mstats[30m::filter()
-[31mx[30m [34mdplyr[30m::[32mlag()[30m    masks [34mstats[30m::lag()[39m</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgYmFzaFxubGlicmFyeShHZW5vbWljUmFuZ2VzKVxuYGBgIn0= -->
-<pre class="bash"><code>library(GenomicRanges)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBzdGF0czRcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogQmlvY0dlbmVyaWNzXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IHBhcmFsbGVsXG5cbkF0dGFjaGluZyBwYWNrYWdlOiCRQmlvY0dlbmVyaWNzklxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIJFwYWNrYWdlOnBhcmFsbGVskjpcblxuICAgIGNsdXN0ZXJBcHBseSwgY2x1c3RlckFwcGx5TEIsIGNsdXN0ZXJDYWxsLCBjbHVzdGVyRXZhbFEsIGNsdXN0ZXJFeHBvcnQsIGNsdXN0ZXJNYXAsIHBhckFwcGx5LCBwYXJDYXBwbHksIHBhckxhcHBseSxcbiAgICBwYXJMYXBwbHlMQiwgcGFyUmFwcGx5LCBwYXJTYXBwbHksIHBhclNhcHBseUxCXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20gkXBhY2thZ2U6ZHBseXKSOlxuXG4gICAgY29tYmluZSwgaW50ZXJzZWN0LCBzZXRkaWZmLCB1bmlvblxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIJFwYWNrYWdlOnN0YXRzkjpcblxuICAgIElRUiwgbWFkLCBzZCwgdmFyLCB4dGFic1xuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIJFwYWNrYWdlOmJhc2WSOlxuXG4gICAgYW55RHVwbGljYXRlZCwgYXBwZW5kLCBhcy5kYXRhLmZyYW1lLCBiYXNlbmFtZSwgY2JpbmQsIGNvbG5hbWVzLCBkaXJuYW1lLCBkby5jYWxsLCBkdXBsaWNhdGVkLCBldmFsLCBldmFscSwgRmlsdGVyLFxuICAgIEZpbmQsIGdldCwgZ3JlcCwgZ3JlcGwsIGludGVyc2VjdCwgaXMudW5zb3J0ZWQsIGxhcHBseSwgTWFwLCBtYXBwbHksIG1hdGNoLCBtZ2V0LCBvcmRlciwgcGFzdGUsIHBtYXgsIHBtYXguaW50LFxuICAgIHBtaW4sIHBtaW4uaW50LCBQb3NpdGlvbiwgcmFuaywgcmJpbmQsIFJlZHVjZSwgcm93bmFtZXMsIHNhcHBseSwgc2V0ZGlmZiwgc29ydCwgdGFibGUsIHRhcHBseSwgdW5pb24sIHVuaXF1ZSxcbiAgICB1bnNwbGl0LCB3aGljaCwgd2hpY2gubWF4LCB3aGljaC5taW5cblxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBTNFZlY3RvcnNcblxuQXR0YWNoaW5nIHBhY2thZ2U6IJFTNFZlY3RvcnOSXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0cyBhcmUgbWFza2VkIGZyb20gkXBhY2thZ2U6ZHBseXKSOlxuXG4gICAgZmlyc3QsIHJlbmFtZVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSCRcGFja2FnZTp0aWR5cpI6XG5cbiAgICBleHBhbmRcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20gkXBhY2thZ2U6YmFzZZI6XG5cbiAgICBleHBhbmQuZ3JpZFxuXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IElSYW5nZXNcblxuQXR0YWNoaW5nIHBhY2thZ2U6IJFJUmFuZ2VzklxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIJFwYWNrYWdlOmRwbHlykjpcblxuICAgIGNvbGxhcHNlLCBkZXNjLCBzbGljZVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSCRcGFja2FnZTpwdXJycpI6XG5cbiAgICByZWR1Y2VcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20gkXBhY2thZ2U6Z3JEZXZpY2VzkjpcblxuICAgIHdpbmRvd3NcblxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBHZW5vbWVJbmZvRGJcbiJ9 -->
-<pre><code>Loading required package: stats4
-Loading required package: BiocGenerics
-Loading required package: parallel
-
-Attaching package: 㤼㸱BiocGenerics㤼㸲
-
-The following objects are masked from 㤼㸱package:parallel㤼㸲:
-
-    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ, clusterExport, clusterMap, parApply, parCapply, parLapply,
-    parLapplyLB, parRapply, parSapply, parSapplyLB
-
-The following objects are masked from 㤼㸱package:dplyr㤼㸲:
-
-    combine, intersect, setdiff, union
-
-The following objects are masked from 㤼㸱package:stats㤼㸲:
-
-    IQR, mad, sd, var, xtabs
-
-The following objects are masked from 㤼㸱package:base㤼㸲:
-
-    anyDuplicated, append, as.data.frame, basename, cbind, colnames, dirname, do.call, duplicated, eval, evalq, Filter,
-    Find, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax, pmax.int,
-    pmin, pmin.int, Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply, union, unique,
-    unsplit, which, which.max, which.min
-
-Loading required package: S4Vectors
-
-Attaching package: 㤼㸱S4Vectors㤼㸲
-
-The following objects are masked from 㤼㸱package:dplyr㤼㸲:
-
-    first, rename
-
-The following object is masked from 㤼㸱package:tidyr㤼㸲:
-
-    expand
-
-The following object is masked from 㤼㸱package:base㤼㸲:
-
-    expand.grid
-
-Loading required package: IRanges
-
-Attaching package: 㤼㸱IRanges㤼㸲
-
-The following objects are masked from 㤼㸱package:dplyr㤼㸲:
-
-    collapse, desc, slice
-
-The following object is masked from 㤼㸱package:purrr㤼㸲:
-
-    reduce
-
-The following object is masked from 㤼㸱package:grDevices㤼㸲:
-
-    windows
-
-Loading required package: GenomeInfoDb</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgYmFzaFxubGlicmFyeShjb3dwbG90KVxuYGBgIn0= -->
-<pre class="bash"><code>library(cowplot)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDjpLzjuLFjb3dwbG9046S847iyIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gMy42LjNcbioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqXG5Ob3RlOiBBcyBvZiB2ZXJzaW9uIDEuMC4wLCBjb3dwbG90IGRvZXMgbm90IGNoYW5nZSB0aGVcbiAgZGVmYXVsdCBnZ3Bsb3QyIHRoZW1lIGFueW1vcmUuIFRvIHJlY292ZXIgdGhlIHByZXZpb3VzXG4gIGJlaGF2aW9yLCBleGVjdXRlOlxuICB0aGVtZV9zZXQodGhlbWVfY293cGxvdCgpKVxuKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKioqKipcbiJ9 -->
-<pre><code>package 㤼㸱cowplot㤼㸲 was built under R version 3.6.3
-********************************************************
-Note: As of version 1.0.0, cowplot does not change the
-  default ggplot2 theme anymore. To recover the previous
-  behavior, execute:
-  theme_set(theme_cowplot())
-********************************************************</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgYmFzaFxudGhlbWVfc2V0KHRoZW1lX2Nvd3Bsb3QoKSlcbmtuaXRyOjpvcHRzX2tuaXQkc2V0KHJvb3QuZGlyPVwiRDovRGF0YS8yMDA1MDVfbmNvdlwiKVxuYGBgIn0= -->
-<pre class="bash"><code>theme_set(theme_cowplot())
-knitr::opts_knit$set(root.dir=&quot;D:/Data/200505_ncov&quot;)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5rbml0cjo6b3B0c19rbml0JHNldChyb290LmRpcj1cIi9Vc2Vycy90aW1wL0pvaG5zIEhvcGtpbnMvU3R1YXJ0IFJheSAtIEpIVS1nZW5vbWljc19TQVJTLUNvVi0yL21ldGFkYXRhX3Jlc291cmNlcy9HZW5iYW5rX1NSQS9cIilcbmBgYCJ9 -->
+<pre class="r"><code>library(tidyverse)
+knitr::opts_knit$set(root.dir=&quot;/Users/timp/Johns Hopkins/Stuart Ray - JHU-genomics_SARS-CoV-2/metadata_resources/Genbank_SRA/&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Now generate GRanges of amplicons</p>
+<p>Now - let’s match it up</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud2dldCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vYXJ0aWMtbmV0d29yay9hcnRpYy1uY292MjAxOS9tYXN0ZXIvcHJpbWVyX3NjaGVtZXMvbkNvVi0yMDE5L1YzL25Db1YtMjAxOS5iZWRcblxuYGBgIn0= -->
-<pre class="r"><code>wget https://raw.githubusercontent.com/artic-network/artic-ncov2019/master/primer_schemes/nCoV-2019/V3/nCoV-2019.bed
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVtcGxhdGU9cmVhZF90c3YoXCJzb3VyY2VfbW9kaWZpZXJzLnRzdlwiKVxuYGBgIn0= -->
+<pre class="r"><code>template=read_tsv(&quot;source_modifiers.tsv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiLS0yMDIwLTA1LTE4IDA3OjEwOjE5LS0gIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9hcnRpYy1uZXR3b3JrL2FydGljLW5jb3YyMDE5L21hc3Rlci9wcmltZXJfc2NoZW1lcy9uQ29WLTIwMTkvVjMvbkNvVi0yMDE5LmJlZFxuUmVzb2x2aW5nIHJhdy5naXRodWJ1c2VyY29udGVudC5jb20gKHJhdy5naXRodWJ1c2VyY29udGVudC5jb20pLi4uIDE1MS4xMDEuMjAwLjEzM1xuQ29ubmVjdGluZyB0byByYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tIChyYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tKXwxNTEuMTAxLjIwMC4xMzN8OjQ0My4uLiBjb25uZWN0ZWQuXG5IVFRQIHJlcXVlc3Qgc2VudCwgYXdhaXRpbmcgcmVzcG9uc2UuLi4gMjAwIE9LXG5MZW5ndGg6IDEyMDE5ICgxMkspIFt0ZXh0L3BsYWluXVxuU2F2aW5nIHRvOiDigJhuQ29WLTIwMTkuYmVkLjHigJlcblxuICAgICAwSyAuLi4uLi4uLi4uIC4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxMDAlIDQwLjhNPTBzXG5cbjIwMjAtMDUtMTggMDc6MTA6MTkgKDQwLjggTUIvcykgLSDigJhuQ29WLTIwMTkuYmVkLjHigJkgc2F2ZWQgWzEyMDE5LzEyMDE5XVxuIn0= -->
-<pre><code>--2020-05-18 07:10:19--  https://raw.githubusercontent.com/artic-network/artic-ncov2019/master/primer_schemes/nCoV-2019/V3/nCoV-2019.bed
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 151.101.200.133
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|151.101.200.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 12019 (12K) [text/plain]
-Saving to: ‘nCoV-2019.bed.1’
-
-     0K .......... .                                          100% 40.8M=0s
-
-2020-05-18 07:10:19 (40.8 MB/s) - ‘nCoV-2019.bed.1’ saved [12019/12019]</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<p>Ok - so now let’s visualize this data. First I wanna plot the length of the amplicons</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbWVyLmxvYz1yZWFkX3RzdihcIm5Db1YtMjAxOS5iZWRcIiwgY29sX25hbWVzPWMoXCJyZWZcIiwgXCJzdGFydFwiLCBcImVuZFwiLCBcIm5hbWVcIiwgXCJwb29sXCIsIFwic3RyYW5kXCIpKVxuYGBgIn0= -->
-<pre class="r"><code>primer.loc=read_tsv(&quot;nCoV-2019.bed&quot;, col_names=c(&quot;ref&quot;, &quot;start&quot;, &quot;end&quot;, &quot;name&quot;, &quot;pool&quot;, &quot;strand&quot;))</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICByZWYgPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bSxcbiAgc3RhcnQgPSBcdTAwMWJbMzJtY29sX2RvdWJsZSgpXHUwMDFiWzM5bSxcbiAgZW5kID0gXHUwMDFiWzMybWNvbF9kb3VibGUoKVx1MDAxYlszOW0sXG4gIG5hbWUgPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bSxcbiAgcG9vbCA9IFx1MDAxYlszMW1jb2xfY2hhcmFjdGVyKClcdTAwMWJbMzltLFxuICBzdHJhbmQgPSBcdTAwMWJbMzFtY29sX2NoYXJhY3RlcigpXHUwMDFiWzM5bVxuKVxuIn0= -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBTZXF1ZW5jZV9JRCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgaXNvbGF0ZSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgY291bnRyeSA9IGNvbF9sb2dpY2FsKCksXG4gIGhvc3QgPSBjb2xfbG9naWNhbCgpLFxuICBgY29sbGVjdGlvbi1kYXRlYCA9IGNvbF9sb2dpY2FsKCksXG4gIGBpc29sYXRpb24tc291cmNlYCA9IGNvbF9sb2dpY2FsKClcbilcbiJ9 -->
 <pre><code>Parsed with column specification:
 cols(
-  ref = [31mcol_character()[39m,
-  start = [32mcol_double()[39m,
-  end = [32mcol_double()[39m,
-  name = [31mcol_character()[39m,
-  pool = [31mcol_character()[39m,
-  strand = [31mcol_character()[39m
+  Sequence_ID = col_character(),
+  isolate = col_character(),
+  country = col_logical(),
+  host = col_logical(),
+  `collection-date` = col_logical(),
+  `isolation-source` = col_logical()
 )</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbWVyLmxvYz1wcmltZXIubG9jICU+JVxuICBtdXRhdGUoYW1wbGljb24ubnVtPXN0cl9zcGxpdF9maXhlZChuYW1lLCBcIl9cIiwgNClbLDJdKVxuXG5hbXBsaWNvbj1wcmltZXIubG9jICU+JVxuICBncm91cF9ieShhbXBsaWNvbi5udW0pICU+JVxuICBzdW1tYXJpemUocG9vbD1wb29sWzFdLCBhbXAuc3RhcnQ9bWluKHN0YXJ0KSwgYW1wLmVuZD1tYXgoZW5kKSkgJT4lXG4gIG11dGF0ZShsZW5ndGg9YW1wLmVuZC1hbXAuc3RhcnQpXG5cbmFtcGxpY29uPWFtcGxpY29uICU+JVxuICBtdXRhdGUocG9vbC55PWlmZWxzZShwb29sPT1cIm5Db1YtMjAxOV8xXCIsIDAsMSkpXG4gIFxuYGBgIn0= -->
-<pre class="r"><code>primer.loc=primer.loc %&gt;%
-  mutate(amplicon.num=str_split_fixed(name, &quot;_&quot;, 4)[,2])
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY3Vycm1ldGE9cmVhZF90c3YoXCIyMDA1MjFfZ2VuYmFuay9qaHVfc2VxdWVuY2VzX21ldGFkYXRhX21hc3Rlci50c3ZcIilcbmBgYCJ9 -->
+<pre class="r"><code>currmeta=read_tsv(&quot;200521_genbank/jhu_sequences_metadata_master.tsv&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTWlzc2luZyBjb2x1bW4gbmFtZXMgZmlsbGVkIGluOiAnWDUnIFs1XVBhcnNlZCB3aXRoIGNvbHVtbiBzcGVjaWZpY2F0aW9uOlxuY29scyhcbiAgLmRlZmF1bHQgPSBjb2xfY2hhcmFjdGVyKCksXG4gIGBDb2xsZWN0aW9uIGRhdGVgID0gY29sX2RhdGUoZm9ybWF0ID0gXCJcIiksXG4gIGBBZGRpdGlvbmFsIGxvY2F0aW9uIGluZm9ybWF0aW9uYCA9IGNvbF9sb2dpY2FsKCksXG4gIGBBZGRpdGlvbmFsIGhvc3QgaW5mb3JtYXRpb25gID0gY29sX2xvZ2ljYWwoKSxcbiAgT3V0YnJlYWsgPSBjb2xfbG9naWNhbCgpLFxuICBgTGFzdCB2YWNjaW5hdGVkYCA9IGNvbF9sb2dpY2FsKCksXG4gIFRyZWF0bWVudCA9IGNvbF9sb2dpY2FsKCksXG4gIGBTdWJtaXNzaW9uIGRhdGVgID0gY29sX2RhdGUoZm9ybWF0ID0gXCJcIiksXG4gIGBSdW4gZGF0ZWAgPSBjb2xfZGF0ZShmb3JtYXQgPSBcIlwiKVxuKVxuU2VlIHNwZWMoLi4uKSBmb3IgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbnMuXG4ifQ== -->
+<pre><code>Missing column names filled in: &#39;X5&#39; [5]Parsed with column specification:
+cols(
+  .default = col_character(),
+  `Collection date` = col_date(format = &quot;&quot;),
+  `Additional location information` = col_logical(),
+  `Additional host information` = col_logical(),
+  Outbreak = col_logical(),
+  `Last vaccinated` = col_logical(),
+  Treatment = col_logical(),
+  `Submission date` = col_date(format = &quot;&quot;),
+  `Run date` = col_date(format = &quot;&quot;)
+)
+See spec(...) for full column specifications.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Ok - next batch</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5mdWxsZmE9cmVhZEROQVN0cmluZ1NldChcIjIwMDYxOF9nZW5iYW5rL2FsbF9zdWJtaXR0ZWRfamh1X3NlcXVlbmNlcy5mYXN0YVwiKVxubmV3bWV0YT1yZWFkX3RzdihcIjIwMDYxOF9nZW5iYW5rL2FsbF9zdWJtaXR0ZWRfamh1X3NlcXVlbmNlc19tZXRhZGF0YS50c3ZcIilcblxubmV3ZmE9ZnVsbGZhWyEobmFtZXMoZnVsbGZhKSAlaW4lIHRlbXBsYXRlJFNlcXVlbmNlX0lEKV1cbndyaXRlWFN0cmluZ1NldChuZXdmYSwgXCIyMDA2MThfZ2VuYmFuay8yMDA2MThfc3VibWl0LmZhXCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+fullfa=readDNAStringSet(&quot;200618_genbank/all_submitted_jhu_sequences.fasta&quot;)
+newmeta=read_tsv(&quot;200618_genbank/all_submitted_jhu_sequences_metadata.tsv&quot;)
 
-amplicon=primer.loc %&gt;%
-  group_by(amplicon.num) %&gt;%
-  summarize(pool=pool[1], amp.start=min(start), amp.end=max(end)) %&gt;%
-  mutate(length=amp.end-amp.start)
-
-amplicon=amplicon %&gt;%
-  mutate(pool.y=ifelse(pool==&quot;nCoV-2019_1&quot;, 0,1))
-  </code></pre>
+newfa=fullfa[!(names(fullfa) %in% template$Sequence_ID)]
+writeXStringSet(newfa, &quot;200618_genbank/200618_submit.fa&quot;)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Then I want to plot the location of the amplicons along the genome</p>
-<p>first pull in the genome (downloaded from )</p>
+<p>So - I subset the DNA fasta by the DNA fasta I submitted last time - this is awk, but it seems that there were a couple submissions, and this seems . . . easiest? Since for whatever reason I don’t have the fasta I used previously stored in onedrive here.</p>
+<p>Now let’s merge the template genbank gives for this fasta with the metainfo I have</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2Vjb25kdGVtcD1yZWFkX3RzdihcIjIwMDYxOF9nZW5iYW5rL3NvdXJjZV9tb2RpZmllcnMudHN2XCIpXG5cbmdlbmJhbmsyPWxlZnRfam9pbihzZWNvbmR0ZW1wLCBuZXdtZXRhLCBieT1jKFwiU2VxdWVuY2VfSURcIiA9IFwiVmlydXMgbmFtZVwiKSkgJT4lXG4gIG11dGF0ZShpc29sYXRlPXN0cl9zcGxpdF9maXhlZChTZXF1ZW5jZV9JRCwgXCIvXCIsIDQpWywzXSkgJT4lXG4gIG11dGF0ZShjb3VudHJ5PXN0cl9zcGxpdF9maXhlZChMb2NhdGlvbiwgXCIgLyBcIiwgMylbLDJdKSAlPiVcbiAgbXV0YXRlKGhvc3Q9SG9zdCkgJT4lXG4gIG11dGF0ZShgY29sbGVjdGlvbi1kYXRlYD1gQ29sbGVjdGlvbiBkYXRlYCkgJT4lXG4gIG11dGF0ZShgaXNvbGF0aW9uLXNvdXJjZWA9YFNwZWNpbWVuIHNvdXJjZWApICU+JVxuICBzZWxlY3QoMTo2KVxuXG53cml0ZV90c3YoZ2VuYmFuazIsIFwiMjAwNjE4X2dlbmJhbmsvMjAwNjE4X3N1Ym1pc3Npb24udHN2XCIpXG5gYGAifQ== -->
+<pre class="r"><code>secondtemp=read_tsv(&quot;200618_genbank/source_modifiers.tsv&quot;)
+
+genbank2=left_join(secondtemp, newmeta, by=c(&quot;Sequence_ID&quot; = &quot;Virus name&quot;)) %&gt;%
+  mutate(isolate=str_split_fixed(Sequence_ID, &quot;/&quot;, 4)[,3]) %&gt;%
+  mutate(country=str_split_fixed(Location, &quot; / &quot;, 3)[,2]) %&gt;%
+  mutate(host=Host) %&gt;%
+  mutate(`collection-date`=`Collection date`) %&gt;%
+  mutate(`isolation-source`=`Specimen source`) %&gt;%
+  select(1:6)
+
+write_tsv(genbank2, &quot;200618_genbank/200618_submission.tsv&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<pre><code>
+<p>Ok - now it’s time to <em>really</em> get into SRA</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zcmF0ZW1wbGF0ZT1yZWFkX2V4Y2VsKFwiMjAwNzI3X3NyYS9QYXRob2dlbi5jbC4xLjAueGxzeFwiLHNraXA9MTIsIGNvbF90eXBlcz1cInRleHRcIilcbm5ld21ldGE9cmVhZF90c3YoXCIyMDA2MThfZ2VuYmFuay9hbGxfc3VibWl0dGVkX2podV9zZXF1ZW5jZXNfbWV0YWRhdGEudHN2XCIpICU+JVxuICBtdXRhdGUobG9jc3RhdGU9c3RyX3NwbGl0X2ZpeGVkKExvY2F0aW9uLCBcIi9cIiwgMylbLDNdKSAlPiVcbiAgbXV0YXRlKGxvY3N0YXRlPXN0cl90cmltKGxvY3N0YXRlKSkgJT4lXG4gIG11dGF0ZShsb2NzdGF0ZT1yZWNvZGUobG9jc3RhdGUsIFwiV2FzaGluZ3RvbiBEQ1wiPVwiRENcIikpXG5cbnNyYW1ldGE9c3JhdGVtcGxhdGUgJT4lXG4gIGFkZF9yb3coYCpzYW1wbGVfbmFtZWA9bmV3bWV0YSRgVmlydXMgbmFtZWApICU+JVxuICBtdXRhdGUoYCpvcmdhbmlzbWA9XCJTQVJTLUNvVi0yXCIpICU+JVxuICBtdXRhdGUoYGlzb2xhdGVgPXN0cl9zcGxpdF9maXhlZChgKnNhbXBsZV9uYW1lYCwgXCIvXCIsIDQpWywzXSkgJT4lXG4gIG11dGF0ZShgKmNvbGxlY3RlZF9ieWA9XCJKb2hucyBIb3BraW5zIFBhdGhvbG9neVwiKSAlPiVcbiAgbXV0YXRlKGAqY29sbGVjdGlvbl9kYXRlYD1hcy5jaGFyYWN0ZXIobmV3bWV0YSRgQ29sbGVjdGlvbiBkYXRlYCkpICU+JVxuICBtdXRhdGUoYCpnZW9fbG9jX25hbWVgPXBhc3RlMChcIlVTQTogXCIsbmV3bWV0YSRsb2NzdGF0ZSkpICU+JVxuICBtdXRhdGUoYGhvc3RgPVwiSG9tbyBzYXBpZW5zXCIpICU+JVxuICBtdXRhdGUoYGhvc3QgZGlzZWFzZWA9XCJDT1ZJRC0xOVwiKSAlPiVcbiAgbXV0YXRlKGBpc29sYXRpb24gc291cmNlYD1uZXdtZXRhJGBTcGVjaW1lbiBzb3VyY2VgKSAlPiVcbiAgbXV0YXRlKGBob3N0X2FnZWA9bmV3bWV0YSRgUGF0aWVudCBhZ2VgKSAlPiVcbiAgbXV0YXRlKGBob3N0X3NleGA9bmV3bWV0YSRHZW5kZXIpICU+JVxuICBtdXRhdGUoYCpsYXRfbG9uYD1cIm5vdCBhcHBsaWNhYmxlXCIpICU+JVxuICBtdXRhdGVfYWxsKGZ1bnMocmVwbGFjZV9uYSguLCAnJykpKSBcbiAgXG53cml0ZV90c3Yoc3JhbWV0YSwgXCIyMDA3Mjdfc3JhLzIwMDcyN19zcmEudHN2XCIpXG5cblxuYGBgIn0= -->
+<pre class="r"><code>
+sratemplate=read_excel(&quot;200727_sra/Pathogen.cl.1.0.xlsx&quot;,skip=12, col_types=&quot;text&quot;)
+newmeta=read_tsv(&quot;200618_genbank/all_submitted_jhu_sequences_metadata.tsv&quot;) %&gt;%
+  mutate(locstate=str_split_fixed(Location, &quot;/&quot;, 3)[,3]) %&gt;%
+  mutate(locstate=str_trim(locstate)) %&gt;%
+  mutate(locstate=recode(locstate, &quot;Washington DC&quot;=&quot;DC&quot;))
 
-&lt;!-- rnb-text-end --&gt;
+srameta=sratemplate %&gt;%
+  add_row(`*sample_name`=newmeta$`Virus name`) %&gt;%
+  mutate(`*organism`=&quot;SARS-CoV-2&quot;) %&gt;%
+  mutate(`isolate`=str_split_fixed(`*sample_name`, &quot;/&quot;, 4)[,3]) %&gt;%
+  mutate(`*collected_by`=&quot;Johns Hopkins Pathology&quot;) %&gt;%
+  mutate(`*collection_date`=as.character(newmeta$`Collection date`)) %&gt;%
+  mutate(`*geo_loc_name`=paste0(&quot;USA: &quot;,newmeta$locstate)) %&gt;%
+  mutate(`host`=&quot;Homo sapiens&quot;) %&gt;%
+  mutate(`host disease`=&quot;COVID-19&quot;) %&gt;%
+  mutate(`isolation source`=newmeta$`Specimen source`) %&gt;%
+  mutate(`host_age`=newmeta$`Patient age`) %&gt;%
+  mutate(`host_sex`=newmeta$Gender) %&gt;%
+  mutate(`*lat_lon`=&quot;not applicable&quot;) %&gt;%
+  mutate_all(funs(replace_na(., &#39;&#39;))) 
+  
+write_tsv(srameta, &quot;200727_sra/200727_sra.tsv&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Ok - now I have to generate metainfo for the actual raw data. This is where it gets a bit tricky.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5zcmF0ZW1wbGF0ZT1yZWFkX2V4Y2VsKFwiMjAwNzI3X3NyYS9QYXRob2dlbi5jbC4xLjAueGxzeFwiLHNraXA9MTIsIGNvbF90eXBlcz1cInRleHRcIilcbm5ld21ldGE9cmVhZF90c3YoXCIyMDA2MThfZ2VuYmFuay9hbGxfc3VibWl0dGVkX2podV9zZXF1ZW5jZXNfbWV0YWRhdGEudHN2XCIpICU+JVxuICBtdXRhdGUobG9jc3RhdGU9c3RyX3NwbGl0X2ZpeGVkKExvY2F0aW9uLCBcIi9cIiwgMylbLDNdKSAlPiVcbiAgbXV0YXRlKGxvY3N0YXRlPXN0cl90cmltKGxvY3N0YXRlKSkgJT4lXG4gIG11dGF0ZShsb2NzdGF0ZT1yZWNvZGUobG9jc3RhdGUsIFwiV2FzaGluZ3RvbiBEQ1wiPVwiRENcIikpXG5gYGAifQ== -->
+<pre class="r"><code>
+sratemplate=read_excel(&quot;200727_sra/Pathogen.cl.1.0.xlsx&quot;,skip=12, col_types=&quot;text&quot;)
+newmeta=read_tsv(&quot;200618_genbank/all_submitted_jhu_sequences_metadata.tsv&quot;) %&gt;%
+  mutate(locstate=str_split_fixed(Location, &quot;/&quot;, 3)[,3]) %&gt;%
+  mutate(locstate=str_trim(locstate)) %&gt;%
+  mutate(locstate=recode(locstate, &quot;Washington DC&quot;=&quot;DC&quot;))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICAuZGVmYXVsdCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgYENvbGxlY3Rpb24gZGF0ZWAgPSBjb2xfZGF0ZShmb3JtYXQgPSBcIlwiKSxcbiAgYEFkZGl0aW9uYWwgaG9zdCBpbmZvcm1hdGlvbmAgPSBjb2xfbG9naWNhbCgpLFxuICBgUGF0aWVudCBhZ2VgID0gY29sX2RvdWJsZSgpLFxuICBPdXRicmVhayA9IGNvbF9sb2dpY2FsKCksXG4gIGBMYXN0IHZhY2NpbmF0ZWRgID0gY29sX2xvZ2ljYWwoKSxcbiAgVHJlYXRtZW50ID0gY29sX2xvZ2ljYWwoKSxcbiAgYFN1Ym1pc3Npb24gZGF0ZWAgPSBjb2xfbG9naWNhbCgpLFxuICBgUnVuIGRhdGVgID0gY29sX2RhdGUoZm9ybWF0ID0gXCJcIilcbilcblNlZSBzcGVjKC4uLikgZm9yIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb25zLlxuIn0= -->
+<pre><code>Parsed with column specification:
+cols(
+  .default = col_character(),
+  `Collection date` = col_date(format = &quot;&quot;),
+  `Additional host information` = col_logical(),
+  `Patient age` = col_double(),
+  Outbreak = col_logical(),
+  `Last vaccinated` = col_logical(),
+  Treatment = col_logical(),
+  `Submission date` = col_logical(),
+  `Run date` = col_date(format = &quot;&quot;)
+)
+See spec(...) for full column specifications.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3JhbWV0YT1zcmF0ZW1wbGF0ZSAlPiVcbiAgYWRkX3JvdyhgKnNhbXBsZV9uYW1lYD1uZXdtZXRhJGBWaXJ1cyBuYW1lYCkgJT4lXG4gIG11dGF0ZShgKm9yZ2FuaXNtYD1cIlNBUlMtQ29WLTJcIikgJT4lXG4gIG11dGF0ZShgaXNvbGF0ZWA9c3RyX3NwbGl0X2ZpeGVkKGAqc2FtcGxlX25hbWVgLCBcIi9cIiwgNClbLDNdKSAlPiVcbiAgbXV0YXRlKGAqY29sbGVjdGVkX2J5YD1cIkpvaG5zIEhvcGtpbnMgUGF0aG9sb2d5XCIpICU+JVxuICBtdXRhdGUoYCpjb2xsZWN0aW9uX2RhdGVgPWFzLmNoYXJhY3RlcihuZXdtZXRhJGBDb2xsZWN0aW9uIGRhdGVgKSkgJT4lXG4gIG11dGF0ZShgKmdlb19sb2NfbmFtZWA9cGFzdGUwKFwiVVNBOiBcIixuZXdtZXRhJGxvY3N0YXRlKSkgJT4lXG4gIG11dGF0ZShgaG9zdGA9XCJIb21vIHNhcGllbnNcIikgJT4lXG4gIG11dGF0ZShgaG9zdCBkaXNlYXNlYD1cIkNPVklELTE5XCIpICU+JVxuICBtdXRhdGUoYGlzb2xhdGlvbiBzb3VyY2VgPW5ld21ldGEkYFNwZWNpbWVuIHNvdXJjZWApICU+JVxuICBtdXRhdGUoYGhvc3RfYWdlYD1uZXdtZXRhJGBQYXRpZW50IGFnZWApICU+JVxuICBtdXRhdGUoYGhvc3Rfc2V4YD1uZXdtZXRhJEdlbmRlcikgJT4lXG4gIG11dGF0ZShgKmxhdF9sb25gPVwibm90IGFwcGxpY2FibGVcIikgJT4lXG4gIG11dGF0ZV9hbGwoZnVucyhyZXBsYWNlX25hKC4sICcnKSkpXG5gYGAifQ== -->
+<pre class="r"><code>srameta=sratemplate %&gt;%
+  add_row(`*sample_name`=newmeta$`Virus name`) %&gt;%
+  mutate(`*organism`=&quot;SARS-CoV-2&quot;) %&gt;%
+  mutate(`isolate`=str_split_fixed(`*sample_name`, &quot;/&quot;, 4)[,3]) %&gt;%
+  mutate(`*collected_by`=&quot;Johns Hopkins Pathology&quot;) %&gt;%
+  mutate(`*collection_date`=as.character(newmeta$`Collection date`)) %&gt;%
+  mutate(`*geo_loc_name`=paste0(&quot;USA: &quot;,newmeta$locstate)) %&gt;%
+  mutate(`host`=&quot;Homo sapiens&quot;) %&gt;%
+  mutate(`host disease`=&quot;COVID-19&quot;) %&gt;%
+  mutate(`isolation source`=newmeta$`Specimen source`) %&gt;%
+  mutate(`host_age`=newmeta$`Patient age`) %&gt;%
+  mutate(`host_sex`=newmeta$Gender) %&gt;%
+  mutate(`*lat_lon`=&quot;not applicable&quot;) %&gt;%
+  mutate_all(funs(replace_na(., &#39;&#39;)))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiZnVucygpIGlzIHNvZnQgZGVwcmVjYXRlZCBhcyBvZiBkcGx5ciAwLjguMFxuUGxlYXNlIHVzZSBhIGxpc3Qgb2YgZWl0aGVyIGZ1bmN0aW9ucyBvciBsYW1iZGFzOiBcblxuICAjIFNpbXBsZSBuYW1lZCBsaXN0OiBcbiAgbGlzdChtZWFuID0gbWVhbiwgbWVkaWFuID0gbWVkaWFuKVxuXG4gICMgQXV0byBuYW1lZCB3aXRoIGB0aWJibGU6OmxzdCgpYDogXG4gIHRpYmJsZTo6bHN0KG1lYW4sIG1lZGlhbilcblxuICAjIFVzaW5nIGxhbWJkYXNcbiAgbGlzdCh+IG1lYW4oLiwgdHJpbSA9IC4yKSwgfiBtZWRpYW4oLiwgbmEucm0gPSBUUlVFKSlcblRoaXMgd2FybmluZyBpcyBkaXNwbGF5ZWQgb25jZSBwZXIgc2Vzc2lvbi5cbiJ9 -->
+<pre><code>funs() is soft deprecated as of dplyr 0.8.0
+Please use a list of either functions or lambdas: 
+
+  # Simple named list: 
+  list(mean = mean, median = median)
+
+  # Auto named with `tibble::lst()`: 
+  tibble::lst(mean, median)
+
+  # Using lambdas
+  list(~ mean(., trim = .2), ~ median(., na.rm = TRUE))
+This warning is displayed once per session.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICBcbndyaXRlX3RzdihzcmFtZXRhLCBcIjIwMDcyN19zcmEvMjAwNzI3X3NyYS50c3ZcIilcblxuXG5gYGAifQ== -->
+<pre class="r"><code>  
+write_tsv(srameta, &quot;200727_sra/200727_sra.tsv&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Ok - now let’s make the same sra sheet but for the nanopore fastq</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5iaW9zYW1wbGVzPXNyYW1ldGEgJT4lXG4gIG11dGF0ZShpZG51bT1zdHJfc3ViKGlzb2xhdGUsIC01LC0xKSlcblxuXG5zcmFkYXR0ZW1wbGF0ZT1yZWFkX2V4Y2VsKFwiMjAwNzI3X3NyYS9TUkFfbWV0YWRhdGEueGxzeFwiLCBzaGVldD1cIlNSQV9kYXRhXCIsICBjb2xfdHlwZXM9XCJ0ZXh0XCIpXG5cbmlsbC5pbmZvPXRpYmJsZShmaWxlbmFtZXM9bGlzdC5maWxlcyhcIkQ6L0RhdGEvMjAwNzMwX25jb3YvaWxsX2ZxL1wiKSkgJT4lXG4gIG11dGF0ZShpbGxzYW1wPXN0cl9zcGxpdF9maXhlZChmaWxlbmFtZXMsICdcXFxcLicsIDQpWywxXSkgJT4lXG4gIGdyb3VwX2J5KGlsbHNhbXApICU+JVxuICBzdW1tYXJpemUocmVhZDE9ZmlsZW5hbWVzW2dyZXBsKFwiUjFcIiwgZmlsZW5hbWVzKV0sIHJlYWQyPWZpbGVuYW1lc1tncmVwbChcIlIyXCIsIGZpbGVuYW1lcyldKSAlPiVcbiAgbXV0YXRlKGlkbnVtPXN0cl9zdWIoaWxsc2FtcCwgLTUsIC0xKSlcblxuIyU+JVxuIyAgaW5uZXJfam9pbihiaW9zYW1wbGVzKVxuICBcblxuaWxsc3JhZGF0PXNyYWRhdHRlbXBsYXRlICU+JVxuICBhZGRfcm93KHNhbXBsZV9uYW1lPWlsbC5pbmZvJGAqc2FtcGxlX25hbWVgKSAlPiVcbiAgbXV0YXRlKGxpYnJhcnlfSUQ9cGFzdGUwKGlsbC5pbmZvJGlsbHNhbXAsIFwiX0lsbHVtaW5hXCIpKSAlPiVcbiAgbXV0YXRlKHRpdGxlPVwiQVJUSUMgSWxsdW1pbmEgU2VxdWVuY2luZyBvZiBTQVJTLUNvVi0yXCIpICU+JVxuICBtdXRhdGUobGlicmFyeV9zdHJhdGVneT1cIkFNUExJQ09OXCIpICU+JVxuICBtdXRhdGUobGlicmFyeV9zb3VyY2U9XCJWSVJBTCBSTkFcIikgJT4lXG4gIG11dGF0ZShsaWJyYXJ5X3NlbGVjdGlvbj1cIlBDUlwiKSAlPiVcbiAgbXV0YXRlKGxpYnJhcnlfbGF5b3V0PVwicGFpcmVkXCIpICU+JVxuICBtdXRhdGUocGxhdGZvcm09XCJJTExVTUlOQVwiKSAlPiVcbiAgbXV0YXRlKGluc3RydW1lbnRfbW9kZWw9XCJJbGx1bWluYSBNaVNlcVwiKSAlPiVcbiAgbXV0YXRlKGRlc2lnbl9kZXNjcmlwdGlvbj1cIkFSVElDIHYzIFByb3RvY29sIFNlcXVlbmNpbmcgb2YgUk5BIGV4dHJhY3RlZCBmcm9tIE5QIFN3YWIgc2FtcGxlcywgZm9sbG93aW5nIHR5cGljYWwgcHJvdG9jb2wgd2l0aCBhbXBsaWNvbnMgZmVkIGludG8gTkVCIE5leHQgTGlicmFyeSBwcmVwIGFuZCBzZXF1ZW5jZWQgb24gTWlTZXEgNjAwdjMgY2FydHJpZGdlXCIpICU+JVxuICBtdXRhdGUoZmlsZXR5cGU9XCJmYXN0cVwiKSAlPiVcbiAgbXV0YXRlKGZpbGVuYW1lPWlsbC5pbmZvJHJlYWQxKSAlPiVcbiAgbXV0YXRlKGZpbGVuYW1lMj1pbGwuaW5mbyRyZWFkMilcbmBgYCJ9 -->
+<pre class="r"><code>
+biosamples=srameta %&gt;%
+  mutate(idnum=str_sub(isolate, -5,-1))
 
 
-&lt;!-- rnb-chunk-begin --&gt;
+sradattemplate=read_excel(&quot;200727_sra/SRA_metadata.xlsx&quot;, sheet=&quot;SRA_data&quot;,  col_types=&quot;text&quot;)
 
+ill.info=tibble(filenames=list.files(&quot;D:/Data/200730_ncov/ill_fq/&quot;)) %&gt;%
+  mutate(illsamp=str_split_fixed(filenames, &#39;\\.&#39;, 4)[,1]) %&gt;%
+  group_by(illsamp) %&gt;%
+  summarize(read1=filenames[grepl(&quot;R1&quot;, filenames)], read2=filenames[grepl(&quot;R2&quot;, filenames)]) %&gt;%
+  mutate(idnum=str_sub(illsamp, -5, -1))
 
-&lt;!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5nZ3Bsb3QoYW1wbGljb24pK2dlb21fc2VnbWVudChhZXMoeD1hbXAuc3RhcnQsIHhlbmQ9YW1wLmVuZCwgeT1wb29sLnksIHllbmQ9cG9vbC55LCBjb2xvcj1wb29sKSkreWxpbSgwLDEwKVxuXG5cbmBgYCJ9 --&gt;
+#%&gt;%
+#  inner_join(biosamples)
+  
 
-```r
+illsradat=sradattemplate %&gt;%
+  add_row(sample_name=ill.info$`*sample_name`) %&gt;%
+  mutate(library_ID=paste0(ill.info$illsamp, &quot;_Illumina&quot;)) %&gt;%
+  mutate(title=&quot;ARTIC Illumina Sequencing of SARS-CoV-2&quot;) %&gt;%
+  mutate(library_strategy=&quot;AMPLICON&quot;) %&gt;%
+  mutate(library_source=&quot;VIRAL RNA&quot;) %&gt;%
+  mutate(library_selection=&quot;PCR&quot;) %&gt;%
+  mutate(library_layout=&quot;paired&quot;) %&gt;%
+  mutate(platform=&quot;ILLUMINA&quot;) %&gt;%
+  mutate(instrument_model=&quot;Illumina MiSeq&quot;) %&gt;%
+  mutate(design_description=&quot;ARTIC v3 Protocol Sequencing of RNA extracted from NP Swab samples, following typical protocol with amplicons fed into NEB Next Library prep and sequenced on MiSeq 600v3 cartridge&quot;) %&gt;%
+  mutate(filetype=&quot;fastq&quot;) %&gt;%
+  mutate(filename=ill.info$read1) %&gt;%
+  mutate(filename2=ill.info$read2)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVW5rbm93biBvciB1bmluaXRpYWxpc2VkIGNvbHVtbjogYCpzYW1wbGVfbmFtZWAuRXJyb3IgaW4gdmVjX3JiaW5kKG9sZCwgbmV3KSA6IFxuICBJbnRlcm5hbCBlcnJvciBpbiBgdmVjX2Fzc2lnbigpYDogYHZhbHVlYCBzaG91bGQgaGF2ZSBiZWVuIHJlY3ljbGVkIHRvIGZpdCBgeGAuXG4ifQ== -->
+<pre><code>Unknown or uninitialised column: `*sample_name`.Error in vec_rbind(old, new) : 
+  Internal error in `vec_assign()`: `value` should have been recycled to fit `x`.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Ok - now what - I guess lets rbind those two tibble and export to tsv</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5uYW5vLmluZm89dGliYmxlKGZpbGVuYW1lcz1saXN0LmZpbGVzKFwiRDovRGF0YS8yMDA3MzBfbmNvdi9ucF9mcS9cIikpICU+JVxuICBtdXRhdGUobmFub3NhbXA9c3RyX3NwbGl0X2ZpeGVkKGZpbGVuYW1lcywgJ18nLCAyKVssMV0pICU+JVxuICBtdXRhdGUoaWRudW09c3RyX3N1YihuYW5vc2FtcCwgLTUsIC0xKSkgJT4lXG4gIGlubmVyX2pvaW4oYmlvc2FtcGxlcylcbmBgYCJ9 -->
+<pre class="r"><code>
+nano.info=tibble(filenames=list.files(&quot;D:/Data/200730_ncov/np_fq/&quot;)) %&gt;%
+  mutate(nanosamp=str_split_fixed(filenames, &#39;_&#39;, 2)[,1]) %&gt;%
+  mutate(idnum=str_sub(nanosamp, -5, -1)) %&gt;%
+  inner_join(biosamples)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiSm9pbmluZywgYnkgPSBcImlkbnVtXCJcbiJ9 -->
+<pre><code>Joining, by = &quot;idnum&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICBcblxubmFub3NyYWRhdD1zcmFkYXR0ZW1wbGF0ZSAlPiVcbiAgYWRkX3JvdyhzYW1wbGVfbmFtZT1uYW5vLmluZm8kYCpzYW1wbGVfbmFtZWApICU+JVxuICBtdXRhdGUobGlicmFyeV9JRD1wYXN0ZTAobmFuby5pbmZvJG5hbm9zYW1wLCBcIl9OYW5vcG9yZVwiKSkgJT4lXG4gIG11dGF0ZSh0aXRsZT1cIkFSVElDIE5hbm9wb3JlIFNlcXVlbmNpbmcgb2YgU0FSUy1Db1YtMlwiKSAlPiVcbiAgbXV0YXRlKGxpYnJhcnlfc3RyYXRlZ3k9XCJBTVBMSUNPTlwiKSAlPiVcbiAgbXV0YXRlKGxpYnJhcnlfc291cmNlPVwiVklSQUwgUk5BXCIpICU+JVxuICBtdXRhdGUobGlicmFyeV9zZWxlY3Rpb249XCJQQ1JcIikgJT4lXG4gIG11dGF0ZShsaWJyYXJ5X2xheW91dD1cInNpbmdsZVwiKSAlPiVcbiAgbXV0YXRlKHBsYXRmb3JtPVwiT1hGT1JEX05BTk9QT1JFXCIpICU+JVxuICBtdXRhdGUoaW5zdHJ1bWVudF9tb2RlbD1cIkdyaWRJT05cIikgJT4lXG4gIG11dGF0ZShkZXNpZ25fZGVzY3JpcHRpb249XCJBUlRJQyB2MyBQcm90b2NvbCBTZXF1ZW5jaW5nIG9mIFJOQSBleHRyYWN0ZWQgZnJvbSBOUCBTd2FiIHNhbXBsZXMsIGZvbGxvd2luZyB0eXBpY2FsIHByb3RvY29sIHdpdGggYW1wbGljb25zIGZlZCBpbnRvIE5hbm9wb3JlIGxpYnJhcnkgcHJlcCBhbmQgc2VxdWVuY2VkIG9uIEdyaWRJT05cIikgJT4lXG4gIG11dGF0ZShmaWxldHlwZT1cImZhc3RxXCIpICU+JVxuICBtdXRhdGUoZmlsZW5hbWU9bmFuby5pbmZvJGZpbGVuYW1lcylcblxuXG5gYGAifQ== -->
+<pre class="r"><code>  
 
-ggplot(amplicon)+geom_segment(aes(x=amp.start, xend=amp.end, y=pool.y, yend=pool.y, color=pool))+ylim(0,10)
+nanosradat=sradattemplate %&gt;%
+  add_row(sample_name=nano.info$`*sample_name`) %&gt;%
+  mutate(library_ID=paste0(nano.info$nanosamp, &quot;_Nanopore&quot;)) %&gt;%
+  mutate(title=&quot;ARTIC Nanopore Sequencing of SARS-CoV-2&quot;) %&gt;%
+  mutate(library_strategy=&quot;AMPLICON&quot;) %&gt;%
+  mutate(library_source=&quot;VIRAL RNA&quot;) %&gt;%
+  mutate(library_selection=&quot;PCR&quot;) %&gt;%
+  mutate(library_layout=&quot;single&quot;) %&gt;%
+  mutate(platform=&quot;OXFORD_NANOPORE&quot;) %&gt;%
+  mutate(instrument_model=&quot;GridION&quot;) %&gt;%
+  mutate(design_description=&quot;ARTIC v3 Protocol Sequencing of RNA extracted from NP Swab samples, following typical protocol with amplicons fed into Nanopore library prep and sequenced on GridION&quot;) %&gt;%
+  mutate(filetype=&quot;fastq&quot;) %&gt;%
+  mutate(filename=nano.info$filenames)
 </code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkxvb2tpbmcgYXQgZWZmaWNpZW5jeSBvZiBhbXBsaWNvbiBzZXF1ZW5jaW5nIg0Kb3V0cHV0OiBodG1sX25vdGVib29rDQotLS0NCmBgYHtyLCBzZXR1cCwgaW5jbHVkZT1GQUxTRX0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShHZW5vbWljUmFuZ2VzKQ0KbGlicmFyeShjb3dwbG90KQ0KdGhlbWVfc2V0KHRoZW1lX2Nvd3Bsb3QoKSkNCmtuaXRyOjpvcHRzX2tuaXQkc2V0KHJvb3QuZGlyPSJEOi9EYXRhLzIwMDUwNV9uY292IikNCmBgYA0KDQpPayAtIHRoZSBnb2FsIGhlcmUgaXMgdG8gbG9vayBhdCB0aGUgZWZmaWNpZW5jeSBvZiBhbXBsaWNvbiBzZXF1ZW5jaW5nIGluIHRoZSBjb250ZXh0IG9mIEFSVElDDQoNCk15IHN1c3BpY2lvbiBpcyB0aGF0IGFtcGxpY29ucyBhcmUgZmFyIGxlc3MgZWZmaWNpZW50IGJlY2F1c2Ugb2YgZGFyayB0aW1lLg0KDQpGaXJzdCBnZXQgdGhlIGJlZCBvZiB0aGUgVjMgQVJUSUMgZnJvbSBhcnRpYy1uY292MjAxOSBnaXRodWINCmBgYHtiYXNofQ0Kd2dldCBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vYXJ0aWMtbmV0d29yay9hcnRpYy1uY292MjAxOS9tYXN0ZXIvcHJpbWVyX3NjaGVtZXMvbkNvVi0yMDE5L1YzL25Db1YtMjAxOS5iZWQNCg0KYGBgYA0KDQpOb3cgZ2VuZXJhdGUgR1JhbmdlcyBvZiBhbXBsaWNvbnMNCmBgYHtyfQ0KcHJpbWVyLmxvYz1yZWFkX3RzdigibkNvVi0yMDE5LmJlZCIsIGNvbF9uYW1lcz1jKCJyZWYiLCAic3RhcnQiLCAiZW5kIiwgIm5hbWUiLCAicG9vbCIsICJzdHJhbmQiKSkNCg0KcHJpbWVyLmxvYz1wcmltZXIubG9jICU+JQ0KICBtdXRhdGUoYW1wbGljb24ubnVtPXN0cl9zcGxpdF9maXhlZChuYW1lLCAiXyIsIDQpWywyXSkNCg0KYW1wbGljb249cHJpbWVyLmxvYyAlPiUNCiAgZ3JvdXBfYnkoYW1wbGljb24ubnVtKSAlPiUNCiAgc3VtbWFyaXplKHBvb2w9cG9vbFsxXSwgYW1wLnN0YXJ0PW1pbihzdGFydCksIGFtcC5lbmQ9bWF4KGVuZCkpICU+JQ0KICBtdXRhdGUobGVuZ3RoPWFtcC5lbmQtYW1wLnN0YXJ0KQ0KDQphbXBsaWNvbj1hbXBsaWNvbiAlPiUNCiAgbXV0YXRlKHBvb2wueT1pZmVsc2UocG9vbD09Im5Db1YtMjAxOV8xIiwgMCwxKSkNCiAgDQpgYGANCg0KT2sgLSBzbyBub3cgbGV0J3MgdmlzdWFsaXplIHRoaXMgZGF0YS4gIEZpcnN0IEkgd2FubmEgcGxvdCB0aGUgbGVuZ3RoIG9mIHRoZSBhbXBsaWNvbnMNCg0KYGBge3J9DQoNCmdncGxvdChhbXBsaWNvbiwgYWVzKHg9bGVuZ3RoLCBmaWxsPXBvb2wpKStnZW9tX2hpc3RvZ3JhbSgpK2ZhY2V0X3dyYXAofnBvb2wpDQoNCmBgYA0KDQpUaGVuIEkgd2FudCB0byBwbG90IHRoZSBsb2NhdGlvbiBvZiB0aGUgYW1wbGljb25zIGFsb25nIHRoZSBnZW5vbWUNCg0KZmlyc3QgcHVsbCBpbiB0aGUgZ2Vub21lIChkb3dubG9hZGVkIGZyb20gKQ0KDQpgYGB7cn0NCg0KYGBgDQoNCmBgYA0KDQpgYGB7cn0NCg0KZ2dwbG90KGFtcGxpY29uKStnZW9tX3NlZ21lbnQoYWVzKHg9YW1wLnN0YXJ0LCB4ZW5kPWFtcC5lbmQsIHk9cG9vbC55LCB5ZW5kPXBvb2wueSwgY29sb3I9cG9vbCkpK3lsaW0oMCwxMCkNCg0KDQpgYGANCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkdlbmJhbmsgQ29udmVyc2lvbiINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNCmBgYHtyLCBzZXR1cCwgaW5jbHVkZT1GQUxTRX0NCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShCaW9zdHJpbmdzKQ0KbGlicmFyeShyZWFkeGwpDQprbml0cjo6b3B0c19rbml0JHNldChyb290LmRpcj0iL1VzZXJzL3RpbXAvSm9obnMgSG9wa2lucy9TdHVhcnQgUmF5IC0gSkhVLWdlbm9taWNzX1NBUlMtQ29WLTIvbWV0YWRhdGFfcmVzb3VyY2VzL0dlbmJhbmtfU1JBLyIpDQpgYGANCg0KDQpPayAtIG91ciBnb2FsIGhlcmUgaXMgdG8gaW5nZXN0IHRoZSBtZXRhaW5mb3JtYXRpb24gZnJvbSBTcmkgZXQgYWwgYW5kIG91dHB1dCBhIGZpbGUgaW4gR2VuYmFuaydzIGxvdmVseSBmb3JtYXQuICBBZnRlciBJIGdldCB0aGlzIHdvcmtpbmcsIEknbGwgbW92ZSBpdCB0byBhbiBSc2NyaXB0IG9yIHNvbWV0aGluZyBhbmQgcGFzcyBpdCB0byBTcmkgYW5kIFRvbSB0byBhZGQgdG8gdGhlIHN0ZCBwaXBlbGluZSBmb3IgYXV0byBnZW5lcmF0aW9uLg0KDQoNCkZpcnN0LCBpbmdlc3QgdGhlIHRlbXBsYXRlIGFuZCBtZXRhaW5mbw0KDQpgYGB7cn0NCnRlbXBsYXRlPXJlYWRfdHN2KCIyMDA1MjFfZ2VuYmFuay9zb3VyY2VfbW9kaWZpZXJzLnRzdiIpDQpjdXJybWV0YT1yZWFkX3RzdigiMjAwNTIxX2dlbmJhbmsvamh1X3NlcXVlbmNlc19tZXRhZGF0YV9tYXN0ZXIudHN2IikNCg0KYGBgDQoNCk5vdyAtIGxldCdzIG1hdGNoIGl0IHVwDQoNCg0KYGBge3J9DQoNCmdlbmJhbms9bGVmdF9qb2luKHRlbXBsYXRlLCBjdXJybWV0YSwgYnk9YygiU2VxdWVuY2VfSUQiID0gIlZpcnVzIG5hbWUiKSkgJT4lDQogIG11dGF0ZShpc29sYXRlPXN0cl9zcGxpdF9maXhlZChTZXF1ZW5jZV9JRCwgIi8iLCA0KVssM10pICU+JQ0KICBtdXRhdGUoY291bnRyeT1zdHJfc3BsaXRfZml4ZWQoTG9jYXRpb24sICIgLyAiLCAzKVssMl0pICU+JQ0KICBtdXRhdGUoaG9zdD1Ib3N0KSAlPiUNCiAgbXV0YXRlKGBjb2xsZWN0aW9uLWRhdGVgPWBDb2xsZWN0aW9uIGRhdGVgKSAlPiUNCiAgbXV0YXRlKGBpc29sYXRpb24tc291cmNlYD1gU3BlY2ltZW4gc291cmNlYCkgJT4lDQogIHNlbGVjdCgxOjYpDQoNCndyaXRlX3RzdihnZW5iYW5rLCAiMjAwNTIxX2dlbmJhbmsvMjAwNTIxX3N1Ym1pc3Npb24udHN2IikNCmBgYA0KDQpPayAtIG5leHQgYmF0Y2gNCg0KYGBge3J9DQoNCmZ1bGxmYT1yZWFkRE5BU3RyaW5nU2V0KCIyMDA2MThfZ2VuYmFuay9hbGxfc3VibWl0dGVkX2podV9zZXF1ZW5jZXMuZmFzdGEiKQ0KbmV3bWV0YT1yZWFkX3RzdigiMjAwNjE4X2dlbmJhbmsvYWxsX3N1Ym1pdHRlZF9qaHVfc2VxdWVuY2VzX21ldGFkYXRhLnRzdiIpDQoNCm5ld2ZhPWZ1bGxmYVshKG5hbWVzKGZ1bGxmYSkgJWluJSB0ZW1wbGF0ZSRTZXF1ZW5jZV9JRCldDQp3cml0ZVhTdHJpbmdTZXQobmV3ZmEsICIyMDA2MThfZ2VuYmFuay8yMDA2MThfc3VibWl0LmZhIikNCg0KYGBgDQoNClNvIC0gSSBzdWJzZXQgdGhlIEROQSBmYXN0YSBieSB0aGUgRE5BIGZhc3RhIEkgc3VibWl0dGVkIGxhc3QgdGltZSAtIHRoaXMgaXMgYXdrLCBidXQgaXQgc2VlbXMgdGhhdCB0aGVyZSB3ZXJlIGEgY291cGxlIHN1Ym1pc3Npb25zLCBhbmQgdGhpcyBzZWVtcyAuIC4gLiBlYXNpZXN0PyAgU2luY2UgZm9yIHdoYXRldmVyIHJlYXNvbiBJIGRvbid0IGhhdmUgdGhlIGZhc3RhIEkgdXNlZCBwcmV2aW91c2x5IHN0b3JlZCBpbiBvbmVkcml2ZSBoZXJlLg0KDQpOb3cgbGV0J3MgbWVyZ2UgdGhlIHRlbXBsYXRlIGdlbmJhbmsgZ2l2ZXMgZm9yIHRoaXMgZmFzdGEgd2l0aCB0aGUgbWV0YWluZm8gSSBoYXZlDQoNCmBgYHtyfQ0Kc2Vjb25kdGVtcD1yZWFkX3RzdigiMjAwNjE4X2dlbmJhbmsvc291cmNlX21vZGlmaWVycy50c3YiKQ0KDQpnZW5iYW5rMj1sZWZ0X2pvaW4oc2Vjb25kdGVtcCwgbmV3bWV0YSwgYnk9YygiU2VxdWVuY2VfSUQiID0gIlZpcnVzIG5hbWUiKSkgJT4lDQogIG11dGF0ZShpc29sYXRlPXN0cl9zcGxpdF9maXhlZChTZXF1ZW5jZV9JRCwgIi8iLCA0KVssM10pICU+JQ0KICBtdXRhdGUoY291bnRyeT1zdHJfc3BsaXRfZml4ZWQoTG9jYXRpb24sICIgLyAiLCAzKVssMl0pICU+JQ0KICBtdXRhdGUoaG9zdD1Ib3N0KSAlPiUNCiAgbXV0YXRlKGBjb2xsZWN0aW9uLWRhdGVgPWBDb2xsZWN0aW9uIGRhdGVgKSAlPiUNCiAgbXV0YXRlKGBpc29sYXRpb24tc291cmNlYD1gU3BlY2ltZW4gc291cmNlYCkgJT4lDQogIHNlbGVjdCgxOjYpDQoNCndyaXRlX3RzdihnZW5iYW5rMiwgIjIwMDYxOF9nZW5iYW5rLzIwMDYxOF9zdWJtaXNzaW9uLnRzdiIpDQpgYGANCg0KT2sgLSBub3cgaXQncyB0aW1lIHRvIF9yZWFsbHlfIGdldCBpbnRvIFNSQQ0KDQpgYGB7cn0NCg0Kc3JhdGVtcGxhdGU9cmVhZF9leGNlbCgiMjAwNzI3X3NyYS9QYXRob2dlbi5jbC4xLjAueGxzeCIsc2tpcD0xMiwgY29sX3R5cGVzPSJ0ZXh0IikNCm5ld21ldGE9cmVhZF90c3YoIjIwMDYxOF9nZW5iYW5rL2FsbF9zdWJtaXR0ZWRfamh1X3NlcXVlbmNlc19tZXRhZGF0YS50c3YiKSAlPiUNCiAgbXV0YXRlKGxvY3N0YXRlPXN0cl9zcGxpdF9maXhlZChMb2NhdGlvbiwgIi8iLCAzKVssM10pICU+JQ0KICBtdXRhdGUobG9jc3RhdGU9c3RyX3RyaW0obG9jc3RhdGUpKSAlPiUNCiAgbXV0YXRlKGxvY3N0YXRlPXJlY29kZShsb2NzdGF0ZSwgIldhc2hpbmd0b24gREMiPSJEQyIpKQ0KDQpzcmFtZXRhPXNyYXRlbXBsYXRlICU+JQ0KICBhZGRfcm93KGAqc2FtcGxlX25hbWVgPW5ld21ldGEkYFZpcnVzIG5hbWVgKSAlPiUNCiAgbXV0YXRlKGAqb3JnYW5pc21gPSJTQVJTLUNvVi0yIikgJT4lDQogIG11dGF0ZShgaXNvbGF0ZWA9c3RyX3NwbGl0X2ZpeGVkKGAqc2FtcGxlX25hbWVgLCAiLyIsIDQpWywzXSkgJT4lDQogIG11dGF0ZShgKmNvbGxlY3RlZF9ieWA9IkpvaG5zIEhvcGtpbnMgUGF0aG9sb2d5IikgJT4lDQogIG11dGF0ZShgKmNvbGxlY3Rpb25fZGF0ZWA9YXMuY2hhcmFjdGVyKG5ld21ldGEkYENvbGxlY3Rpb24gZGF0ZWApKSAlPiUNCiAgbXV0YXRlKGAqZ2VvX2xvY19uYW1lYD1wYXN0ZTAoIlVTQTogIixuZXdtZXRhJGxvY3N0YXRlKSkgJT4lDQogIG11dGF0ZShgaG9zdGA9IkhvbW8gc2FwaWVucyIpICU+JQ0KICBtdXRhdGUoYGhvc3QgZGlzZWFzZWA9IkNPVklELTE5IikgJT4lDQogIG11dGF0ZShgaXNvbGF0aW9uIHNvdXJjZWA9bmV3bWV0YSRgU3BlY2ltZW4gc291cmNlYCkgJT4lDQogIG11dGF0ZShgaG9zdF9hZ2VgPW5ld21ldGEkYFBhdGllbnQgYWdlYCkgJT4lDQogIG11dGF0ZShgaG9zdF9zZXhgPW5ld21ldGEkR2VuZGVyKSAlPiUNCiAgbXV0YXRlKGAqbGF0X2xvbmA9Im5vdCBhcHBsaWNhYmxlIikgJT4lDQogIG11dGF0ZV9hbGwoZnVucyhyZXBsYWNlX25hKC4sICcnKSkpIA0KICANCndyaXRlX3RzdihzcmFtZXRhLCAiMjAwNzI3X3NyYS8yMDA3Mjdfc3JhLnRzdiIpDQoNCg0KYGBgDQoNCk9rIC0gbm93IEkgaGF2ZSB0byBnZW5lcmF0ZSBtZXRhaW5mbyBmb3IgdGhlIGFjdHVhbCByYXcgZGF0YS4gIFRoaXMgaXMgd2hlcmUgaXQgZ2V0cyBhIGJpdCB0cmlja3kuDQoNCmBgYHtyfQ0KDQpiaW9zYW1wbGVzPXNyYW1ldGEgJT4lDQogIG11dGF0ZShpZG51bT1zdHJfc3ViKGlzb2xhdGUsIC01LC0xKSkNCg0KDQpzcmFkYXR0ZW1wbGF0ZT1yZWFkX2V4Y2VsKCIyMDA3Mjdfc3JhL1NSQV9tZXRhZGF0YS54bHN4Iiwgc2hlZXQ9IlNSQV9kYXRhIiwgIGNvbF90eXBlcz0idGV4dCIpDQoNCmlsbC5pbmZvPXRpYmJsZShmaWxlbmFtZXM9bGlzdC5maWxlcygiRDovRGF0YS8yMDA3MzBfbmNvdi9pbGxfZnEvIikpICU+JQ0KICBtdXRhdGUoaWxsc2FtcD1zdHJfc3BsaXRfZml4ZWQoZmlsZW5hbWVzLCAnXFwuJywgNClbLDFdKSAlPiUNCiAgZ3JvdXBfYnkoaWxsc2FtcCkgJT4lDQogIHN1bW1hcml6ZShyZWFkMT1maWxlbmFtZXNbZ3JlcGwoIlIxIiwgZmlsZW5hbWVzKV0sIHJlYWQyPWZpbGVuYW1lc1tncmVwbCgiUjIiLCBmaWxlbmFtZXMpXSkgJT4lDQogIG11dGF0ZShpZG51bT1zdHJfc3ViKGlsbHNhbXAsIC01LCAtMSkpDQoNCiMlPiUNCiMgIGlubmVyX2pvaW4oYmlvc2FtcGxlcykNCiAgDQoNCmlsbHNyYWRhdD1zcmFkYXR0ZW1wbGF0ZSAlPiUNCiAgYWRkX3JvdyhzYW1wbGVfbmFtZT1pbGwuaW5mbyRgKnNhbXBsZV9uYW1lYCkgJT4lDQogIG11dGF0ZShsaWJyYXJ5X0lEPXBhc3RlMChpbGwuaW5mbyRpbGxzYW1wLCAiX0lsbHVtaW5hIikpICU+JQ0KICBtdXRhdGUodGl0bGU9IkFSVElDIElsbHVtaW5hIFNlcXVlbmNpbmcgb2YgU0FSUy1Db1YtMiIpICU+JQ0KICBtdXRhdGUobGlicmFyeV9zdHJhdGVneT0iQU1QTElDT04iKSAlPiUNCiAgbXV0YXRlKGxpYnJhcnlfc291cmNlPSJWSVJBTCBSTkEiKSAlPiUNCiAgbXV0YXRlKGxpYnJhcnlfc2VsZWN0aW9uPSJQQ1IiKSAlPiUNCiAgbXV0YXRlKGxpYnJhcnlfbGF5b3V0PSJwYWlyZWQiKSAlPiUNCiAgbXV0YXRlKHBsYXRmb3JtPSJJTExVTUlOQSIpICU+JQ0KICBtdXRhdGUoaW5zdHJ1bWVudF9tb2RlbD0iSWxsdW1pbmEgTWlTZXEiKSAlPiUNCiAgbXV0YXRlKGRlc2lnbl9kZXNjcmlwdGlvbj0iQVJUSUMgdjMgUHJvdG9jb2wgU2VxdWVuY2luZyBvZiBSTkEgZXh0cmFjdGVkIGZyb20gTlAgU3dhYiBzYW1wbGVzLCBmb2xsb3dpbmcgdHlwaWNhbCBwcm90b2NvbCB3aXRoIGFtcGxpY29ucyBmZWQgaW50byBORUIgTmV4dCBMaWJyYXJ5IHByZXAgYW5kIHNlcXVlbmNlZCBvbiBNaVNlcSA2MDB2MyBjYXJ0cmlkZ2UiKSAlPiUNCiAgbXV0YXRlKGZpbGV0eXBlPSJmYXN0cSIpICU+JQ0KICBtdXRhdGUoZmlsZW5hbWU9aWxsLmluZm8kcmVhZDEpICU+JQ0KICBtdXRhdGUoZmlsZW5hbWUyPWlsbC5pbmZvJHJlYWQyKQ0KDQpgYGANCg0KDQpPayAtIG5vdyBsZXQncyBtYWtlIHRoZSBzYW1lIHNyYSBzaGVldCBidXQgZm9yIHRoZSBuYW5vcG9yZSBmYXN0cQ0KDQpgYGB7cn0NCg0KbmFuby5pbmZvPXRpYmJsZShmaWxlbmFtZXM9bGlzdC5maWxlcygiRDovRGF0YS8yMDA3MzBfbmNvdi9ucF9mcS8iKSkgJT4lDQogIG11dGF0ZShuYW5vc2FtcD1zdHJfc3BsaXRfZml4ZWQoZmlsZW5hbWVzLCAnXycsIDIpWywxXSkgJT4lDQogIG11dGF0ZShpZG51bT1zdHJfc3ViKG5hbm9zYW1wLCAtNSwgLTEpKSAlPiUNCiAgaW5uZXJfam9pbihiaW9zYW1wbGVzKQ0KICANCg0KbmFub3NyYWRhdD1zcmFkYXR0ZW1wbGF0ZSAlPiUNCiAgYWRkX3JvdyhzYW1wbGVfbmFtZT1uYW5vLmluZm8kYCpzYW1wbGVfbmFtZWApICU+JQ0KICBtdXRhdGUobGlicmFyeV9JRD1wYXN0ZTAobmFuby5pbmZvJG5hbm9zYW1wLCAiX05hbm9wb3JlIikpICU+JQ0KICBtdXRhdGUodGl0bGU9IkFSVElDIE5hbm9wb3JlIFNlcXVlbmNpbmcgb2YgU0FSUy1Db1YtMiIpICU+JQ0KICBtdXRhdGUobGlicmFyeV9zdHJhdGVneT0iQU1QTElDT04iKSAlPiUNCiAgbXV0YXRlKGxpYnJhcnlfc291cmNlPSJWSVJBTCBSTkEiKSAlPiUNCiAgbXV0YXRlKGxpYnJhcnlfc2VsZWN0aW9uPSJQQ1IiKSAlPiUNCiAgbXV0YXRlKGxpYnJhcnlfbGF5b3V0PSJzaW5nbGUiKSAlPiUNCiAgbXV0YXRlKHBsYXRmb3JtPSJPWEZPUkRfTkFOT1BPUkUiKSAlPiUNCiAgbXV0YXRlKGluc3RydW1lbnRfbW9kZWw9IkdyaWRJT04iKSAlPiUNCiAgbXV0YXRlKGRlc2lnbl9kZXNjcmlwdGlvbj0iQVJUSUMgdjMgUHJvdG9jb2wgU2VxdWVuY2luZyBvZiBSTkEgZXh0cmFjdGVkIGZyb20gTlAgU3dhYiBzYW1wbGVzLCBmb2xsb3dpbmcgdHlwaWNhbCBwcm90b2NvbCB3aXRoIGFtcGxpY29ucyBmZWQgaW50byBOYW5vcG9yZSBsaWJyYXJ5IHByZXAgYW5kIHNlcXVlbmNlZCBvbiBHcmlkSU9OIikgJT4lDQogIG11dGF0ZShmaWxldHlwZT0iZmFzdHEiKSAlPiUNCiAgbXV0YXRlKGZpbGVuYW1lPW5hbm8uaW5mbyRmaWxlbmFtZXMpDQoNCg0KYGBgDQoNCg0KT2sgLSBub3cgd2hhdCAtIEkgZ3Vlc3MgbGV0cyByYmluZCB0aG9zZSB0d28gdGliYmxlIGFuZCBleHBvcnQgdG8gdHN2DQoNCmBgYHtyfQ0KDQpmdWxsc3JhZGF0PXJiaW5kKGlsbHNyYWRhdCwgbmFub3NyYWRhdCkgJT4lDQogIG11dGF0ZV9hbGwoZnVucyhyZXBsYWNlX25hKC4sICcnKSkpIA0KDQoNCndyaXRlX3RzdihmdWxsc3JhZGF0LCAiMjAwNzI3X3NyYS8yMDA3MzFfc3JhZGF0LnRzdiIpDQoNCmBgYA==</div>
 
 
 
@@ -1981,7 +2047,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("200505_ampliconeff.Rmd");
+  window.initializeSourceEmbed("200521_genbanksra.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>

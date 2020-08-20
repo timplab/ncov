@@ -1,0 +1,177 @@
+---
+title: "Genbank Conversion"
+output: html_notebook
+---
+
+```{r, setup, include=FALSE}
+library(tidyverse)
+library(Biostrings)
+library(readxl)
+knitr::opts_knit$set(root.dir="/Users/timp/Johns Hopkins/Stuart Ray - JHU-genomics_SARS-CoV-2/metadata_resources/Genbank_SRA/")
+```
+
+
+Ok - our goal here is to ingest the metainformation from Sri et al and output a file in Genbank's lovely format.  After I get this working, I'll move it to an Rscript or something and pass it to Sri and Tom to add to the std pipeline for auto generation.
+
+
+First, ingest the template and metainfo
+
+```{r}
+template=read_tsv("200521_genbank/source_modifiers.tsv")
+currmeta=read_tsv("200521_genbank/jhu_sequences_metadata_master.tsv")
+
+```
+
+Now - let's match it up
+
+
+```{r}
+
+genbank=left_join(template, currmeta, by=c("Sequence_ID" = "Virus name")) %>%
+  mutate(isolate=str_split_fixed(Sequence_ID, "/", 4)[,3]) %>%
+  mutate(country=str_split_fixed(Location, " / ", 3)[,2]) %>%
+  mutate(host=Host) %>%
+  mutate(`collection-date`=`Collection date`) %>%
+  mutate(`isolation-source`=`Specimen source`) %>%
+  select(1:6)
+
+write_tsv(genbank, "200521_genbank/200521_submission.tsv")
+```
+
+Ok - next batch
+
+```{r}
+
+fullfa=readDNAStringSet("200618_genbank/all_submitted_jhu_sequences.fasta")
+newmeta=read_tsv("200618_genbank/all_submitted_jhu_sequences_metadata.tsv")
+
+newfa=fullfa[!(names(fullfa) %in% template$Sequence_ID)]
+writeXStringSet(newfa, "200618_genbank/200618_submit.fa")
+
+```
+
+So - I subset the DNA fasta by the DNA fasta I submitted last time - this is awk, but it seems that there were a couple submissions, and this seems . . . easiest?  Since for whatever reason I don't have the fasta I used previously stored in onedrive here.
+
+Now let's merge the template genbank gives for this fasta with the metainfo I have
+
+```{r}
+secondtemp=read_tsv("200618_genbank/source_modifiers.tsv")
+
+genbank2=left_join(secondtemp, newmeta, by=c("Sequence_ID" = "Virus name")) %>%
+  mutate(isolate=str_split_fixed(Sequence_ID, "/", 4)[,3]) %>%
+  mutate(country=str_split_fixed(Location, " / ", 3)[,2]) %>%
+  mutate(host=Host) %>%
+  mutate(`collection-date`=`Collection date`) %>%
+  mutate(`isolation-source`=`Specimen source`) %>%
+  select(1:6)
+
+write_tsv(genbank2, "200618_genbank/200618_submission.tsv")
+```
+
+Ok - now it's time to _really_ get into SRA
+
+```{r}
+
+sratemplate=read_excel("200727_sra/Pathogen.cl.1.0.xlsx",skip=12, col_types="text")
+newmeta=read_tsv("200618_genbank/all_submitted_jhu_sequences_metadata.tsv") %>%
+  mutate(locstate=str_split_fixed(Location, "/", 3)[,3]) %>%
+  mutate(locstate=str_trim(locstate)) %>%
+  mutate(locstate=recode(locstate, "Washington DC"="DC"))
+
+srameta=sratemplate %>%
+  add_row(`*sample_name`=newmeta$`Virus name`) %>%
+  mutate(`*organism`="SARS-CoV-2") %>%
+  mutate(`isolate`=str_split_fixed(`*sample_name`, "/", 4)[,3]) %>%
+  mutate(`*collected_by`="Johns Hopkins Pathology") %>%
+  mutate(`*collection_date`=as.character(newmeta$`Collection date`)) %>%
+  mutate(`*geo_loc_name`=paste0("USA: ",newmeta$locstate)) %>%
+  mutate(`host`="Homo sapiens") %>%
+  mutate(`host disease`="COVID-19") %>%
+  mutate(`isolation source`=newmeta$`Specimen source`) %>%
+  mutate(`host_age`=newmeta$`Patient age`) %>%
+  mutate(`host_sex`=newmeta$Gender) %>%
+  mutate(`*lat_lon`="not applicable") %>%
+  mutate_all(funs(replace_na(., ''))) 
+  
+write_tsv(srameta, "200727_sra/200727_sra.tsv")
+
+
+```
+
+Ok - now I have to generate metainfo for the actual raw data.  This is where it gets a bit tricky.
+
+```{r}
+
+biosamples=srameta %>%
+  mutate(idnum=str_sub(isolate, -5,-1))
+
+
+sradattemplate=read_excel("200727_sra/SRA_metadata.xlsx", sheet="SRA_data",  col_types="text")
+
+ill.info=tibble(filenames=list.files("D:/Data/200730_ncov/ill_fq/")) %>%
+  mutate(illsamp=str_split_fixed(filenames, '\\.', 4)[,1]) %>%
+  group_by(illsamp) %>%
+  summarize(read1=filenames[grepl("R1", filenames)], read2=filenames[grepl("R2", filenames)]) %>%
+  mutate(idnum=str_sub(illsamp, -5, -1))
+
+#%>%
+#  inner_join(biosamples)
+  
+
+illsradat=sradattemplate %>%
+  add_row(sample_name=ill.info$`*sample_name`) %>%
+  mutate(library_ID=paste0(ill.info$illsamp, "_Illumina")) %>%
+  mutate(title="ARTIC Illumina Sequencing of SARS-CoV-2") %>%
+  mutate(library_strategy="AMPLICON") %>%
+  mutate(library_source="VIRAL RNA") %>%
+  mutate(library_selection="PCR") %>%
+  mutate(library_layout="paired") %>%
+  mutate(platform="ILLUMINA") %>%
+  mutate(instrument_model="Illumina MiSeq") %>%
+  mutate(design_description="ARTIC v3 Protocol Sequencing of RNA extracted from NP Swab samples, following typical protocol with amplicons fed into NEB Next Library prep and sequenced on MiSeq 600v3 cartridge") %>%
+  mutate(filetype="fastq") %>%
+  mutate(filename=ill.info$read1) %>%
+  mutate(filename2=ill.info$read2)
+
+```
+
+
+Ok - now let's make the same sra sheet but for the nanopore fastq
+
+```{r}
+
+nano.info=tibble(filenames=list.files("D:/Data/200730_ncov/np_fq/")) %>%
+  mutate(nanosamp=str_split_fixed(filenames, '_', 2)[,1]) %>%
+  mutate(idnum=str_sub(nanosamp, -5, -1)) %>%
+  inner_join(biosamples)
+  
+
+nanosradat=sradattemplate %>%
+  add_row(sample_name=nano.info$`*sample_name`) %>%
+  mutate(library_ID=paste0(nano.info$nanosamp, "_Nanopore")) %>%
+  mutate(title="ARTIC Nanopore Sequencing of SARS-CoV-2") %>%
+  mutate(library_strategy="AMPLICON") %>%
+  mutate(library_source="VIRAL RNA") %>%
+  mutate(library_selection="PCR") %>%
+  mutate(library_layout="single") %>%
+  mutate(platform="OXFORD_NANOPORE") %>%
+  mutate(instrument_model="GridION") %>%
+  mutate(design_description="ARTIC v3 Protocol Sequencing of RNA extracted from NP Swab samples, following typical protocol with amplicons fed into Nanopore library prep and sequenced on GridION") %>%
+  mutate(filetype="fastq") %>%
+  mutate(filename=nano.info$filenames)
+
+
+```
+
+
+Ok - now what - I guess lets rbind those two tibble and export to tsv
+
+```{r}
+
+fullsradat=rbind(illsradat, nanosradat) %>%
+  mutate_all(funs(replace_na(., ''))) 
+
+
+write_tsv(fullsradat, "200727_sra/200731_sradat.tsv")
+
+```

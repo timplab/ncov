@@ -45,7 +45,15 @@ ggplot(amplicon, aes(x=length, fill=pool))+geom_histogram()+facet_wrap(~pool)
 
 ```
 
-Then I want to plot the location of the amplicons along the genom
+Then I want to plot the location of the amplicons along the genome
+
+first pull in the genome (downloaded from )
+
+```{r}
+
+```
+
+```
 
 ```{r}
 
