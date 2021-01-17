@@ -80,9 +80,11 @@ postfilter_dir="${sequencing_run}/artic-pipeline/5-post-filter"
 
 # Postfiltering reference files
 # also include reference file, see CombineVariants section
-vcf_next="/home/idies/workspace/covid19/nextstrain/latest/alpha/alignments.vcf"
+global_vars="/home/idies/workspace/covid19/code/ncov/pipeline_scripts/approx_global_diversity.tsv"
 case_defs="/home/idies/workspace/covid19/code/ncov/pipeline_scripts/variant_case_definitions.csv"
 amplicons="/home/idies/workspace/covid19/sequencing_runs/amplicons"
+key_positions="/home/idies/workspace/covid19/code/ncov/pipeline_scripts/key_positions.txt"
+homopolymers="/home/idies/workspace/covid19/code/ncov/pipeline_scripts/homopolymer_positions.txt"
 
 # Posterfiltering NTC files for baselining
 control_barcode=$(awk -F $'\t' -v control_name="${control_name}" '$2 == control_name { print $1 }' "${manifest}" | head -n1)
@@ -298,8 +300,10 @@ bash -x "$run_postfilter" \
 	-i "${consensus_dir}" \
 	-d "${ntc_depthfile}" \
 	-b "${ntc_bamfile}" \
-	-v "${vcf_next}" \
+	-v "${global_vars}" \
 	-c "${case_defs}" \
+	-p "${homopolymers}" \
+	-k "${key_positions}" \
 	-r "${reference}" \
 	-a "${amplicons}" \
 	-m "${manifest}" \
