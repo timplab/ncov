@@ -157,8 +157,8 @@ module4_complete_flag="TRUE"
 
 # verify existence of all reference files needed for full Module 5 execution
 ref_files_found_flag="TRUE"
-if [[ ! -s "${vcf_next}" ]]; then 
-	>&2 echo "Error: Module 5 reference file not found: ${vcf_next}"
+if [[ ! -s "${global_vars}" ]]; then 
+	>&2 echo "Error: Module 5 reference file not found: ${global_vars}"
 	ref_files_found_flag="FALSE"
 fi
 
@@ -169,6 +169,16 @@ fi
 
 if [[ ! -s "${amplicons}" ]]; then 
 	>&2 echo "Error: Module 5 reference file not found: ${amplicons}"
+	ref_files_found_flag="FALSE"
+fi
+
+if [[ ! -s "${key_positions}" ]]; then 
+	>&2 echo "Error: Module 5 reference file not found: ${key_positions}"
+	ref_files_found_flag="FALSE"
+fi
+
+if [[ ! -s "${homopolymers}" ]]; then 
+	>&2 echo "Error: Module 5 reference file not found: ${homopolymers}"
 	ref_files_found_flag="FALSE"
 fi
 
