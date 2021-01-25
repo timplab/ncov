@@ -280,7 +280,7 @@ def main():
                  'status','homopolymer','in_consensus','unambig',
                  'ont_depth','illumina_depth','ont_depth_thresh','illumina_depth_thresh',
                  'ont_AF','illumina_AF','ont_alleles','illumina_alleles','ont_strand_counts',
-                 'ont_strand_counts','medaka_qual','nanopolish_qual','illumina_support',
+                 'medaka_qual','nanopolish_qual','illumina_support',
                  'depth_flag','ntc_flag','indel_flag','vc_flag','mixed_flag','maf_flag',
                  'sb_flag','key_flag','new_flag'])
 
@@ -322,9 +322,14 @@ def main():
         # but no other flags
         if len(data['alt']) != len(data['ref']):
             data = parse_indel_data(data,info,masked_align,var_idx)
-            data = pd.DataFrame([data], columns=data.keys())
-            df = pd.concat([df,data],ignore_index=True,sort=False)
-            continue
+            # ignore samtools-only indels
+            # do not add them to final vcf
+            if data['vc_flag']=="mismatch(s)":
+                continue # without adding this row to the dataframe
+            else:
+                data = pd.DataFrame([data], columns=data.keys())
+                df = pd.concat([df,data],ignore_index=True,sort=False)
+                continue # after adding indel to dataframe
 
         ### ASSEMBLE DATA FOR SINGLE NUCLEOTIDE POLYMORPHISMS
         
@@ -423,7 +428,7 @@ def main():
     df = df.replace(np.nan,'.')
     
     # save output file
-    filepath = os.path.join(args.outdir,args.prefix+'.variant_data.txt')
+    filepath = os.path.join(args.outdir,args.samplename+'.variant_data.txt')
     df.to_csv(filepath,sep='\t',index=False)
     
     # then make the final consensus
