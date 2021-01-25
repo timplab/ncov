@@ -78,7 +78,7 @@ def generate_postfilter_summary(rundir):
                 # and get only flags to print
                 
                 # replace flags with abbreviated versions
-                for key in ['depth_flag','ntc_flag','new_flag','sb_flag','key_flag']:
+                for key in ['depth_flag','ntc_flag','new_flag','sb_flag','key_flag','indel_flag']:
                     if not pd.isna(data[key]):
                         if 'depth' in data[key]:
                             data[key]='depth'
@@ -88,6 +88,8 @@ def generate_postfilter_summary(rundir):
                             data[key]='new'
                         elif 'strand bias' in data[key]:
                             data[key]='SB'
+                        elif 'insertion' in data[key] or 'deletion' in data[key]:
+                            data[key]='indel'
                 if any(not pd.isna(data[key]) for key in ['maf_flag','mixed_flag']):
                     data['maf_flag']='MAF'
                         
@@ -100,7 +102,7 @@ def generate_postfilter_summary(rundir):
                         data['ill']='ill'
                 
                 # concatenate all flags together
-                flags_to_join=['depth_flag','ntc_flag','vc_flag','maf_flag','sb_flag','key_flag','new_flag','ill']
+                flags_to_join=['depth_flag','ntc_flag','vc_flag','maf_flag','sb_flag','key_flag','new_flag','ill','indel_flag']
                 flag_data = {key: data[key] for key in flags_to_join}
                 allflag = ', '.join([str(pos)+':'+str(x) for x in flag_data.values() if not pd.isna(x)])
                 stat.append(data['status'])
