@@ -41,8 +41,8 @@ do
                 a) amplicons=$OPTARG ;;
                 p) homopolymers=$OPTARG ;;
                 k) key_positions=$OPTARG ;;
-		m) manifest=$OPTARG ;;
-		n) control_name=$OPTARG;;
+        m) manifest=$OPTARG ;;
+        n) control_name=$OPTARG;;
                 ?) usage; exit ;;
        esac
 done
@@ -80,36 +80,36 @@ keypos="${key_positions}"
 
 while read barcode name; do
 
-	# loop through all NTC samples
-	if [[  "$name" != "$control_name" ]]; then
+    # loop through all NTC samples
+    if [[  "$name" != "$control_name" ]]; then
 
-		# align sample to reference genome
+        # align sample to reference genome
         echo "SAMPLE $name: aligning to reference genome"
         cat "${reference}" "${consensus}" > "${postfilter_dir}/${name}_${barcode}.ref.fasta"
         mafft --preservecase "${postfilter_dir}/${name}_${barcode}.ref.fasta" > "${postfilter_dir}/${name}_${barcode}.align.ref.fasta"
 
 
         echo "SAMPLE $name: running vcf_postfilter.py"
-		vcffile="${consensus_dir}/${name}_${barcode}.all_caller_freqs.vcf"
-		depth="${consensus_dir}/${name}_${barcode}.nanopolish.primertrimmed.rg.sorted.del.depth"
-		alignment="${postfilter_dir}/${name}_${barcode}.align.ref.fasta"
+        vcffile="${consensus_dir}/${name}_${barcode}.all_caller_freqs.vcf"
+        depth="${consensus_dir}/${name}_${barcode}.nanopolish.primertrimmed.rg.sorted.del.depth"
+        alignment="${postfilter_dir}/${name}_${barcode}.align.ref.fasta"
 
-		# run script
-		vcf_postfilter.py \
-		--vcffile "$vcffile" \
-		--depthfile "$depth" \
+        # run script
+        vcf_postfilter.py \
+        --vcffile "$vcffile" \
+        --depthfile "$depth" \
         --aln-to-ref "$alignment" \
-		--ntc-bamfile "$ntc_bamfile" \
-		--ntc-depthfile "$ntc_depthfile" \
-		--global_vars "$global_vars" \
+        --ntc-bamfile "$ntc_bamfile" \
+        --ntc-depthfile "$ntc_depthfile" \
+        --global_vars "$global_vars" \
         --key-vars "$keypos" \
         --homopolymers "$homopolymers" \
-		--case-defs "$case_defs" \
-		--ref-genome "$reference" \
-		--amplicons "$amplicons" \
-		--outdir "$postfilter_dir" \
-		--samplename "${name}_${barcode}"
-	fi
+        --case-defs "$case_defs" \
+        --ref-genome "$reference" \
+        --amplicons "$amplicons" \
+        --outdir "$postfilter_dir" \
+        --samplename "${name}_${barcode}"
+    fi
 
 done < "${manifest}"
 
