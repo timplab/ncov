@@ -105,7 +105,6 @@ while read barcode name; do
         --key-vars "$keypos" \
         --homopolymers "$homopolymers" \
         --case-defs "$case_defs" \
-        --ref-genome "$reference" \
         --amplicons "$amplicons" \
         --outdir "$postfilter_dir" \
         --samplename "${name}_${barcode}"
