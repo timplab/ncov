@@ -32,7 +32,7 @@ while getopts "hi:d:b:v:c:r:a:p:k:m:n:" OPTION
 do
        case $OPTION in
                 h) usage; exit 1 ;;
-                i) consensus=$OPTARG ;;
+                i) consensus_dir=$OPTARG ;;
                 d) depthfile=$OPTARG ;;
                 b) bamfile=$OPTARG ;;
                 v) global_vars=$OPTARG ;;
@@ -56,7 +56,7 @@ fi
 
 # save path to reference genome and consensus
 reference="${reference}"
-consensus="${consensus}"
+consensus_dir="${consensus_dir}"
 
 # save path to NTC depthfile and mpileup
 ntc_depthfile="${depthfile}"
@@ -85,7 +85,7 @@ while read barcode name; do
 
         # align sample to reference genome
         echo "SAMPLE $name: aligning to reference genome"
-        cat "${reference}" "${consensus}" > "${postfilter_dir}/${name}_${barcode}.ref.fasta"
+        cat "${reference}" "${consensus_dir}/${name}_${barcode}.nanopolish.consensus.fasta" > "${postfilter_dir}/${name}_${barcode}.ref.fasta"
         mafft --preservecase "${postfilter_dir}/${name}_${barcode}.ref.fasta" > "${postfilter_dir}/${name}_${barcode}.align.ref.fasta"
 
 
