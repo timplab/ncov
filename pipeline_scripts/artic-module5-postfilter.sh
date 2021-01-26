@@ -90,7 +90,7 @@ while read barcode name; do
 
 
         echo "SAMPLE $name: running vcf_postfilter.py"
-        vcffile="${consensus_dir}/${name}_${barcode}.all_caller_freqs.vcf"
+        vcffile="${consensus_dir}/${name}_${barcode}.all_callers.combined.vcf"
         depth="${consensus_dir}/${name}_${barcode}.nanopolish.primertrimmed.rg.sorted.del.depth"
         alignment="${postfilter_dir}/${name}_${barcode}.align.ref.fasta"
 
