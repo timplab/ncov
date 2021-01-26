@@ -101,7 +101,7 @@ while read barcode name; do
         --aln-to-ref "$alignment" \
         --ntc-bamfile "$ntc_bamfile" \
         --ntc-depthfile "$ntc_depthfile" \
-        --global_vars "$global_vars" \
+        --global-vars "$global_vars" \
         --key-vars "$keypos" \
         --homopolymers "$homopolymers" \
         --case-defs "$case_defs" \
