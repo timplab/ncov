@@ -28,7 +28,7 @@ control_name="NTC"
 
 
 # parse input arguments
-while getopts "hi:d:b:v:c:r:a:m:n:" OPTION
+while getopts "hi:d:b:v:c:r:a:p:k:m:n:" OPTION
 do
        case $OPTION in
                 h) usage; exit 1 ;;
