@@ -347,7 +347,7 @@ if [[ ${#variant_data_tracker[@]} -ge 1 ]]; then
 	
 	echo_log "RUN ${sequencing_run_name}: Starting Module 5 Postfilter Summarization on ${sequencing_run}"
 
-	python "${postfilter_summary}" --rundir "${postfilter_dir}" 2>> "${logfile}"
+	python "${postfilter_summary}" --rundir "${postfilter_dir}" --ref "${reference}" 2>> "${logfile}"
 
 	echo_log "RUN ${sequencing_run_name}: Module 5 Postfilter Summarization completed for ${sequencing_run}"
 else
