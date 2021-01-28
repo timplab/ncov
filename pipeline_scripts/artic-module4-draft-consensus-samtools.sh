@@ -179,6 +179,10 @@ echo_log "SAMPLE $(basename ${normalized_fastq%.covfiltered.fq}): Starting Modul
 
 samtools mpileup --reference "${reference}" "${input_nanopolish_bamfile}" -o "${mpileup}" 2>> "${logfile}"
 
+# Recompile Variant Validator code
+"$JAVA_PATH/javac" \
+"${VariantValidatorPath}/src/*.java" 2>> "${logfile}"
+
 # Run samtools-based variant calling
 "$JAVA_PATH/java" \
 -cp "${VariantValidatorPath}/src" CallVariants \
